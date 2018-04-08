@@ -1,0 +1,19 @@
+#b {
+    width: 70%;
+    height: 80%;
+    background-color: #d0c8d1;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#DEc {
+    display: none;
+}
+
+#MDc {
+    display: none;
+}
