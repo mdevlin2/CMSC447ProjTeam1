@@ -5,68 +5,103 @@
     <title>Coastal Home Search</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <script type="text/javascript" src="search.js"></script>
-    <div id="b">
-        <form onsubmit="searchState()" id="myform"></form>
+    <form onsubmit="return searchState()">
         <table>
-        <tr>
-            <th>State</th>
+        <tr id="keyword" style="display: none;">
+            <th>Keyword (Optional):</th>
             <th>
-            <select id="state" form="myform">
-                <option value="MD" form="myform">Maryland</option>
-                <option value="DE" form="myform">Delaware</option>
+            <input type="text" name="keyword" id="keyword">
+            </th>
+        </tr>
+        <tr id="stateSelect">
+            <th>State:</th>
+            <th>
+            <select id="state">
+                <option value="MD">Maryland</option>
+                <option value="DE">Delaware</option>
             </select>
             </th>
+        </tr>
+        <tr id="submitbutton">
             <th>
-                <input type="submit" value="Select State" form="myform">
+                <button type="submit">Select State</button>
             </th>
         </tr>
         </table>
-        <form onsubmit="search()">
+    </form>
+    <form onsubmit="return searchMap()">
         <table>
-        <tr id="MDc">
-            <th>County</th>
-            <th>
-            <select name="county">
-                <option value="PGC">Prince George's County</option>
-                <option value="MC">Montgomery County</option>
-                <option value="AAC">Anne Arundel</option>
-                <option value="HC">Hartford County</option>
-                <option value="BC">Baltimore County</option>
-                <option value="CC">Cecil County</option>
-                <option value="QAC">Queen Anne County</option>
-                <option value="AC">Allegany County</option>
-                <option value="WC">Wicomico County</option>
-                <option value="GC">Garrett County</option>
-                <option value="FC">Frederick County</option>
-                <option value="DC">Dorchester County</option>
-                <option value="WC">Worcester County</option>
-                <option value="HC">Howard County</option>
-                <option value="CaC">Caroll County</option>
-                <option value="ChC">Charles County</option>
-                <option value="SC">Somerset County</option>
-                <option value="WaC">Washington County</option>
-                <option value="SMC">St. Mary's County</option>
-                <option value="CarC">Caroline County</option>
-                <option value="TC">Talbot County</option>
-                <option value="KC">Kent County</option>
-            </select>
-            </th>
-        </tr>
-        <tr id="DEc">
-            <th>County</th>
-            <th>
-            <select name="county">
-                <option value="NCC">New Castle County</option>
-                <option value="SC">Sussex County</option>
-                <option value="KC">Kent County</option>
-            </select>
-            </th>
-        </tr>
-        </form>
+            <tr id="MDc">
+                <th>County</th>
+                <th>
+                <select name="countyMD">
+                    <option value="PGC">Prince George's County</option>
+                    <option value="MC">Montgomery County</option>
+                    <option value="AAC">Anne Arundel</option>
+                    <option value="HC">Hartford County</option>
+                    <option value="BC">Baltimore County</option>
+                    <option value="CC">Cecil County</option>
+                    <option value="QAC">Queen Anne County</option>
+                    <option value="AC">Allegany County</option>
+                    <option value="WC">Wicomico County</option>
+                    <option value="GC">Garrett County</option>
+                    <option value="FC">Frederick County</option>
+                    <option value="DC">Dorchester County</option>
+                    <option value="WC">Worcester County</option>
+                    <option value="HC">Howard County</option>
+                    <option value="CaC">Caroll County</option>
+                    <option value="ChC">Charles County</option>
+                    <option value="SC">Somerset County</option>
+                    <option value="WaC">Washington County</option>
+                    <option value="SMC">St. Mary's County</option>
+                    <option value="CarC">Caroline County</option>
+                    <option value="TC">Talbot County</option>
+                    <option value="KC">Kent County</option>
+                </select>
+                </th>
+            </tr>
+            <tr id="DEc">
+                <th>County</th>
+                <th>
+                <select name="countyDE">
+                    <option value="NCC">New Castle County</option>
+                    <option value="SC">Sussex County</option>
+                    <option value="KC">Kent County</option>
+                </select>
+                </th>
+            </tr>
+            <tr id="cityMD" style="display: none;">
+                <th>City</th>
+                <th>
+                <select name="cityDE">
+                    <option value="NCC">New Castle County</option>
+                    <option value="SC">Sussex County</option>
+                    <option value="KC">Kent County</option>
+                </select>
+                </th>
+            </tr>
+            <tr id="cityDE" style="display: none;">
+                <th>City</th>
+                <th>
+                <select name="cityDE">
+                    <option value="NCC">New Castle County</option>
+                    <option value="SC">Sussex County</option>
+                    <option value="KC">Kent County</option>
+                </select>
+                </th>
+            </tr>
+            <tr id="finalsearch" style="display: none;">
+                <th>
+                    <input type="submit">
+                </th>
+            </tr>
         </table>
-    </div>
+    </form>
+    <script src="search.js"></script>
+    <script>
+        function searchMap() {rl
+            window.location = "http://location:8000/map.html";
+        }
 </body>
 </html>
