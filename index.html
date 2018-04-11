@@ -6,9 +6,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="wrapper">
+    <div id="header">
+        <img src="images/headerBackground.png">
+    <div id="nav">
+        <ul>
+            <li><a href="http://localhost:8000/index.html">Home</a></li>
+            <li><a href="http://localhost:8000/map.html">Map</a></li>
+        </ul>
+    </div>
+    </div>
+    </div>
+
     <form onsubmit="return searchState()">
         <table>
-        <tr id="keyword" style="display: none;">
+        <tr id="keyword">
             <th>Keyword (Optional):</th>
             <th>
             <input type="text" name="keyword" id="keyword">
@@ -71,7 +83,7 @@
                 </select>
                 </th>
             </tr>
-            <tr id="cityMD" style="display: none;">
+            <tr id="cityMD">
                 <th>City</th>
                 <th>
                 <select name="cityDE">
@@ -81,7 +93,7 @@
                 </select>
                 </th>
             </tr>
-            <tr id="cityDE" style="display: none;">
+            <tr id="cityDE">
                 <th>City</th>
                 <th>
                 <select name="cityDE">
@@ -91,7 +103,7 @@
                 </select>
                 </th>
             </tr>
-            <tr id="finalsearch" style="display: none;">
+            <tr id="finalsearch">
                 <th>
                     <input type="submit">
                 </th>

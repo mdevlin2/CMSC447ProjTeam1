@@ -15,7 +15,7 @@ function searchState() {
         deCity.style.display = "none";
         mdCity.style.display = "inline-block";
         stateSel.innerHTML = "<h1>State: Maryland<h1>";
-        md.insertAdjacentHTML("beforeend", "<br><br>");
+        //md.insertAdjacentHTML("beforeend", "<br><br><br><br><br>");
     }
     else if (val == "DE") {
         de.style.display = "inline-block";
@@ -23,7 +23,7 @@ function searchState() {
         deCity.style.display = "inline-block";
         mdCity.style.display = "none";
         stateSel.innerHTML = "<h1>State: Delaware<h1>";
-        de.insertAdjacentHTML("beforeend", "<br><br>");
+        //de.insertAdjacentHTML("beforeend", "<br><br><br><br><br>");
     }
     submitb.style.display = "none";
     finalsearch.style.display = "inline-block";
