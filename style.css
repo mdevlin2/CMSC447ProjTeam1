@@ -103,6 +103,9 @@ body {
     background-color: #333;
 }
 
+table {
+    border-collapse: collapse;
+}
 
 a {
     color: #0066cc;
@@ -124,4 +127,37 @@ a.button {
   -moz-border-radius: 5px;
   border-radius: 5px;
   text-decoration: none;
+}
+
+#resBar {
+    background-color: #FFF;
+    border-right: 60px solid #FFF;
+    border-radius: 10px;
+    padding-top: 2em;
+}
+
+#borderWrap {
+    border: 7px solid #c6d9ec;
+    background-color: #c6d9ec;
+    border-right: 2em solid #c6d9ec;
+    border-radius: 10px;
+    padding-left: 1.2em;
+}
+
+#resBar a {
+    color: blue;
+}
+
+#contentBoxes a {
+    font-family: 'Open Sans',sans-serif;
+    color: blue;
+    font-size: .9em;
+    line-height: 1.6em;
+}
+
+#contentBoxes p, a, h3{
+    font-family: 'Open Sans',sans-serif;
+    font-size: .9em;
+    line-height: 1.6em;
+    color: #3A4145;
 }

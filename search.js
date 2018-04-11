@@ -8,6 +8,7 @@ function searchState() {
     var deCity = document.getElementById("cityDE");
     var submitb = document.getElementById("submitbutton");
     var finalsearch = document.getElementById("finalsearch");
+    var keyword = document.getElementById("keyword");
 
     if(val == "MD") {
         de.style.display = "none";
@@ -26,6 +27,7 @@ function searchState() {
         //de.insertAdjacentHTML("beforeend", "<br><br><br><br><br>");
     }
     submitb.style.display = "none";
+    keyword.style.display = "inline-block";
     finalsearch.style.display = "inline-block";
     return false;
 }

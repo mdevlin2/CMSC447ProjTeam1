@@ -1,5 +1,5 @@
  <DOCTYPE !HTML>
-<html>
+<html>ssdf  
 <head>
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
@@ -16,32 +16,32 @@
         </ul>
     </div>
     </div>
+    <br>
     <form onsubmit="return searchState()">
         <table>
-        <tr id="keyword">
-            <th>Keyword (Optional):</th>
-            <th>
-            <input type="text" name="keyword" id="keyword">
-            </th>
-        </tr>
         <tr id="stateSelect">
-            <th>State:</th>
-            <th>
+            <th style="padding: 0 15px 0 0;">State:</th>
+            <th style="padding: 0 0 0 15px;">
             <select id="state">
                 <option value="MD">Maryland</option>
                 <option value="DE">Delaware</option>
             </select>
             </th>
         </tr>
-        <tr id="submitbutton">
-            <th>
-                <button type="submit">Select State</button>
-            </th>
-        </tr>
         </table>
+        <br>
+        <div id="submitbutton">
+            <button type="submit">Select State</button>
+        </div>
     </form>
     <form onsubmit="return searchMap()">
         <table>
+            <tr id="keyword" style="display: none;">
+                <th>Keyword (Optional):</th>
+                <th>
+                <input type="text" name="keyword">
+                </th>
+            </tr>
             <tr id="MDc">
                 <th>County</th>
                 <th>
