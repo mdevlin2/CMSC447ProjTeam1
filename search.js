@@ -15,7 +15,7 @@ function searchState() {
         md.style.display = "inline-block";
         deCity.style.display = "none";
         mdCity.style.display = "inline-block";
-        stateSel.innerHTML = "<h3>State: Maryland<h3>";
+        stateSel.innerHTML = "<h3>State: Maryland<h3>"; 
         //md.insertAdjacentHTML("beforeend", "<br><br><br><br><br>");
     }
     else if (val == "DE") {

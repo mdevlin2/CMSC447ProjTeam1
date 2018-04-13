@@ -31,13 +31,18 @@ body {
 }
 
 #submitbutton {
-    display: inline-block;
+    display: inline-block;a
 }
 
 #searchBar {
     float: right;
     padding: 9px;
 }
+
+#nav, td {
+    vertical-align: baseline;
+}
+
 
 #settingsIcon {
     float: right;
@@ -142,6 +147,8 @@ a.button {
     border-right: 2em solid #c6d9ec;
     border-radius: 10px;
     padding-left: 1.2em;
+    height: 800px;
+    width: 1000px;
 }
 
 #resBar a {
