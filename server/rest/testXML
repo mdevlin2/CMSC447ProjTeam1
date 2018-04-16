@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RegionChildren:regionchildren xsi:schemaLocation="http://www.zillow.com/static/xsd/RegionChildren.xsd https://www.zillowstatic.com/vstatic/b20c067/static/xsd/RegionChildren.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RegionChildren="http://www.zillow.com/static/xsd/RegionChildren.xsd">
+    <request>
+        <state>md</state>
+        <county>"Baltimore"</county>
+        <childtype>city</childtype>
+    </request>
+    <message>
+        <text>Request successfully processed</text>
+        <code>0</code>
+    </message>
+    <response>
+        <region>
+            <id>2626</id>
+            <latitude>39.458153</latitude>
+            <longitude>-76.601906</longitude>
+        </region>
+        <subregiontype>city</subregiontype>
+        <list>
+            <count>41</count>
+            <region>
+                <id>11170</id>
+                <name>Dundalk</name>
+                <zindex currency="USD">125500</zindex>
+                <url>http://www.zillow.com/local-info/MD-Dundalk/r_11170/</url>
+                <latitude>39.260511</latitude>
+                <longitude>-76.486107</longitude>
+            </region>
+            <region>
+                <id>28948</id>
+                <name>Owings Mills</name>
+                <zindex currency="USD">226600</zindex>
+                <url>http://www.zillow.com/local-info/MD-Owings-Mills/r_28948/</url>
+                <latitude>39.436995</latitude>
+                <longitude>-76.780392</longitude>
+            </region>
+            <region>
+                <id>44490</id>
+                <name>Catonsville</name>
+                <zindex currency="USD">268400</zindex>
+                <url>http://www.zillow.com/local-info/MD-Catonsville/r_44490/</url>
+                <latitude>39.269303</latitude>
+                <longitude>-76.739626</longitude>
+            </region>
+            <region>
+                <id>20831</id>
+                <name>Towson</name>
+                <zindex currency="USD">339000</zindex>
+                <url>http://www.zillow.com/local-info/MD-Towson/r_20831/</url>
+                <latitude>39.410505</latitude>
+                <longitude>-76.601806</longitude>
+            </region>
+            <region>
+                <id>25879</id>
+                <name>Middle River</name>
+                <zindex currency="USD">191600</zindex>
+                <url>http://www.zillow.com/local-info/MD-Middle-River/r_25879/</url>
+                <latitude>39.341513</latitude>
+                <longitude>-76.402021</longitude>
+            </region>
+            <region>
+                <id>11340</id>
+                <name>Essex</name>
+                <zindex currency="USD">168900</zindex>
+                <url>http://www.zillow.com/local-info/MD-Essex/r_11340/</url>
+                <latitude>39.294997</latitude>
+                <longitude>-76.444446</longitude>
+            </region>
+            <region>
+                <id>48531</id>
+                <name>Windsor Mill</name>
+                <zindex currency="USD">178600</zindex>
+                <url>http://www.zillow.com/local-info/MD-Windsor-Mill/r_48531/</url>
+                <latitude>39.336192</latitude>
+                <longitude>-76.791392</longitude>
+            </region>
+            <region>
+                <id>396136</id>
+                <name>Lutherville Timonium</name>
+                <zindex currency="USD">343000</zindex>
+                <url>http://www.zillow.com/local-info/MD-Lutherville-Timonium/r_396136/</url>
+                <latitude>39.438202</latitude>
+                <longitude>-76.638852</longitude>
+            </region>
+            <region>
+                <id>31912</id>
+                <name>Halethorpe</name>
+                <zindex currency="USD">191400</zindex>
+                <url>http://www.zillow.com/local-info/MD-Halethorpe/r_31912/</url>
+                <latitude>39.238904</latitude>
+                <longitude>-76.685445</longitude>
+            </region>
+            <region>
+                <id>49547</id>
+                <name>Parkville</name>
+                <zindex currency="USD">182100</zindex>
+                <url>http://www.zillow.com/local-info/MD-Parkville/r_49547/</url>
+                <latitude>39.38686</latitude>
+                <longitude>-76.551132</longitude>
+            </region>
+            <region>
+                <id>53642</id>
+                <name>Nottingham</name>
+                <zindex currency="USD">220200</zindex>
+                <url>http://www.zillow.com/local-info/MD-Nottingham/r_53642/</url>
+                <latitude>39.389219</latitude>
+                <longitude>-76.486482</longitude>
+            </region>
+            <region>
+                <id>47334</id>
+                <name>Reisterstown</name>
+                <zindex currency="USD">234900</zindex>
+                <url>http://www.zillow.com/local-info/MD-Reisterstown/r_47334/</url>
+                <latitude>39.47906</latitude>
+                <longitude>-76.798458</longitude>
+            </region>
+            <region>
+                <id>35469</id>
+                <name>Elkridge</name>
+                <zindex currency="USD">315000</zindex>
+                <url>http://www.zillow.com/local-info/MD-Elkridge/r_35469/</url>
+                <latitude>39.205771</latitude>
+                <longitude>-76.747076</longitude>
+            </region>
+            <region>
+                <id>26492</id>
+                <name>Pikesville</name>
+                <zindex currency="USD">217600</zindex>
+                <url>http://www.zillow.com/local-info/MD-Pikesville/r_26492/</url>
+                <latitude>39.385206</latitude>
+                <longitude>-76.704215</longitude>
+            </region>
+            <region>
+                <id>54056</id>
+                <name>Randallstown</name>
+                <zindex currency="USD">199500</zindex>
+                <url>http://www.zillow.com/local-info/MD-Randallstown/r_54056/</url>
+                <latitude>39.37879</latitude>
+                <longitude>-76.8075</longitude>
+            </region>
+            <region>
+                <id>157222</id>
+                <name>Carney</name>
+                <zindex currency="USD">223100</zindex>
+                <url>http://www.zillow.com/local-info/MD-Carney/r_157222/</url>
+                <latitude>39.403004</latitude>
+                <longitude>-76.534141</longitude>
+            </region>
+            <region>
+                <id>48904</id>
+                <name>Cockeysville</name>
+                <zindex currency="USD">326700</zindex>
+                <url>http://www.zillow.com/local-info/MD-Cockeysville/r_48904/</url>
+                <latitude>39.491836</latitude>
+                <longitude>-76.662465</longitude>
+            </region>
+            <region>
+                <id>26843</id>
+                <name>Rosedale</name>
+                <zindex currency="USD">186300</zindex>
+                <url>http://www.zillow.com/local-info/MD-Rosedale/r_26843/</url>
+                <latitude>39.330251</latitude>
+                <longitude>-76.507852</longitude>
+            </region>
+            <region>
+                <id>160335</id>
+                <name>Lochearn</name>
+                <zindex currency="USD">174100</zindex>
+                <url>http://www.zillow.com/local-info/MD-Lochearn/r_160335/</url>
+                <latitude>39.348238</latitude>
+                <longitude>-76.729702</longitude>
+            </region>
+            <region>
+                <id>162295</id>
+                <name>Rossville</name>
+                <zindex currency="USD">189200</zindex>
+                <url>http://www.zillow.com/local-info/MD-Rossville/r_162295/</url>
+                <latitude>39.354735</latitude>
+                <longitude>-76.472674</longitude>
+            </region>
+            <region>
+                <id>26465</id>
+                <name>Perry Hall</name>
+                <zindex currency="USD">271600</zindex>
+                <url>http://www.zillow.com/local-info/MD-Perry-Hall/r_26465/</url>
+                <latitude>39.405011</latitude>
+                <longitude>-76.443498</longitude>
+            </region>
+            <region>
+                <id>49038</id>
+                <name>Edgemere</name>
+                <zindex currency="USD">226000</zindex>
+                <url>http://www.zillow.com/local-info/MD-Edgemere/r_49038/</url>
+                <latitude>39.221457</latitude>
+                <longitude>-76.459882</longitude>
+            </region>
+            <region>
+                <id>36028</id>
+                <name>Phoenix</name>
+                <zindex currency="USD">502200</zindex>
+                <url>http://www.zillow.com/local-info/MD-Phoenix/r_36028/</url>
+                <latitude>39.498632</latitude>
+                <longitude>-76.564018</longitude>
+            </region>
+            <region>
+                <id>42677</id>
+                <name>Parkton</name>
+                <zindex currency="USD">404400</zindex>
+                <url>http://www.zillow.com/local-info/MD-Parkton/r_42677/</url>
+                <latitude>39.647495</latitude>
+                <longitude>-76.673314</longitude>
+            </region>
+            <region>
+                <id>21380</id>
+                <name>Woodstock</name>
+                <zindex currency="USD">436400</zindex>
+                <url>http://www.zillow.com/local-info/MD-Woodstock/r_21380/</url>
+                <latitude>39.340611</latitude>
+                <longitude>-76.857673</longitude>
+            </region>
+            <region>
+                <id>9767</id>
+                <name>Marriottsville</name>
+                <zindex currency="USD">440600</zindex>
+                <url>http://www.zillow.com/local-info/MD-Marriottsville/r_9767/</url>
+                <latitude>39.346172</latitude>
+                <longitude>-76.905165</longitude>
+            </region>
+            <region>
+                <id>57234</id>
+                <name>Glen Arm</name>
+                <zindex currency="USD">417100</zindex>
+                <url>http://www.zillow.com/local-info/MD-Glen-Arm/r_57234/</url>
+                <latitude>39.452316</latitude>
+                <longitude>-76.502164</longitude>
+            </region>
+            <region>
+                <id>15875</id>
+                <name>Monkton</name>
+                <zindex currency="USD">431000</zindex>
+                <url>http://www.zillow.com/local-info/MD-Monkton/r_15875/</url>
+                <latitude>39.574409</latitude>
+                <longitude>-76.592749</longitude>
+            </region>
+            <region>
+                <id>34081</id>
+                <name>Sparks Glencoe</name>
+                <zindex currency="USD">320400</zindex>
+                <url>http://www.zillow.com/local-info/MD-Sparks-Glencoe/r_34081/</url>
+                <latitude>39.547899</latitude>
+                <longitude>-76.679725</longitude>
+            </region>
+            <region>
+                <id>32315</id>
+                <name>Kingsville</name>
+                <zindex currency="USD">356300</zindex>
+                <url>http://www.zillow.com/local-info/MD-Kingsville/r_32315/</url>
+                <latitude>39.446466</latitude>
+                <longitude>-76.417427</longitude>
+            </region>
+            <region>
+                <id>43514</id>
+                <name>Upperco</name>
+                <zindex currency="USD">325300</zindex>
+                <url>http://www.zillow.com/local-info/MD-Upperco/r_43514/</url>
+                <latitude>39.571173</latitude>
+                <longitude>-76.814529</longitude>
+            </region>
+            <region>
+                <id>3513</id>
+                <name>Baldwin</name>
+                <zindex currency="USD">399800</zindex>
+                <url>http://www.zillow.com/local-info/MD-Baldwin/r_3513/</url>
+                <latitude>39.512644</latitude>
+                <longitude>-76.48235</longitude>
+            </region>
+            <region>
+                <id>36636</id>
+                <name>Hydes</name>
+                <url>http://www.zillow.com/local-info/MD-Hydes/r_36636/</url>
+                <latitude>39.479262</latitude>
+                <longitude>-76.463486</longitude>
+            </region>
+            <region>
+                <id>11537</id>
+                <name>Freeland</name>
+                <zindex currency="USD">366100</zindex>
+                <url>http://www.zillow.com/local-info/MD-Freeland/r_11537/</url>
+                <latitude>39.680616</latitude>
+                <longitude>-76.713857</longitude>
+            </region>
+            <region>
+                <id>39073</id>
+                <name>Hunt Valley</name>
+                <url>http://www.zillow.com/local-info/MD-Hunt-Valley/r_39073/</url>
+                <latitude>39.482943</latitude>
+                <longitude>-76.656666</longitude>
+            </region>
+            <region>
+                <id>34813</id>
+                <name>White Marsh</name>
+                <zindex currency="USD">323100</zindex>
+                <url>http://www.zillow.com/local-info/MD-White-Marsh/r_34813/</url>
+                <latitude>39.393531</latitude>
+                <longitude>-76.402952</longitude>
+            </region>
+            <region>
+                <id>4769</id>
+                <name>Fort Howard</name>
+                <url>http://www.zillow.com/local-info/MD-Fort-Howard/r_4769/</url>
+                <latitude>39.202513</latitude>
+                <longitude>-76.442991</longitude>
+            </region>
+            <region>
+                <id>45467</id>
+                <name>Glyndon</name>
+                <url>http://www.zillow.com/local-info/MD-Glyndon/r_45467/</url>
+                <latitude>39.47486</latitude>
+                <longitude>-76.814853</longitude>
+            </region>
+            <region>
+                <id>49358</id>
+                <name>Fork</name>
+                <url>http://www.zillow.com/local-info/MD-Fork/r_49358/</url>
+                <latitude>39.467807</latitude>
+                <longitude>-76.446782</longitude>
+            </region>
+            <region>
+                <id>775596</id>
+                <name>Garrison</name>
+                <url>http://www.zillow.com/local-info/MD-Garrison/r_775596/</url>
+                <latitude>39.402774</latitude>
+                <longitude>-76.751511</longitude>
+            </region>
+            <region>
+                <id>14240</id>
+                <name>Upper Falls</name>
+                <url>http://www.zillow.com/local-info/MD-Upper-Falls/r_14240/</url>
+                <latitude>39.441335</latitude>
+                <longitude>-76.396574</longitude>
+            </region>
+        </list>
+    </response>
+</RegionChildren:regionchildren>
+<!-- H:045  T:693ms  S:5249  R:Sun Apr 15 20:35:29 PDT 2018  B:5.0.53029.1-hotfix_ADAT-2519.69881bc~hotfix-platform-for-2018-04-11.319b04e -->
