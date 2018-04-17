@@ -5,11 +5,13 @@ import json
 import rest.zillowCollector as zc
 from models.location import Location
 from models.http import Response
+from utils.rest import restUtil
 
 app = Flask(__name__)
 CORS(app)
 
-zillow = zc.Zillow()
+rest = restUtil()
+zillow = zc.Zillow(rest)
 
 # build a city with the given arguements
 def buildLoc(args):
@@ -29,7 +31,11 @@ def makeResponse(data, err):
 def getCitiesRoute():
     newLoc = buildLoc(request.args)
     cityList = zillow.getCities(newLoc)
-    resp = makeResponse(cityList, 0)
+    err = 0
+    if cityList == None:
+        err = 1
+
+    resp = makeResponse(cityList, err)
 
     # new response
     return resp

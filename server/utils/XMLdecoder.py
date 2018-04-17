@@ -2,7 +2,13 @@ import xml.etree.ElementTree as ET
 import models.location as loc
 
 def makeCity(e):
-    newCity = loc.City(e[1].text, e[0].text)
+    name = e.find("name")
+    id = e.find("id")
+    if name == None or id == None:
+        print("utils.XMLdecoder.makeCity Could not find name or id of city ", e)
+        return None
+
+    newCity = loc.City(name.text, id.text)
     return newCity
 
 def validate(xml):
@@ -13,16 +19,25 @@ def validate(xml):
         return False
     return True
 
-    
+
 def getCityList(xml):
     if not validate(xml):
         print("utils.XMLdecoder.getCityList could not get city list")
+        return None
+
     cityList = list()
-    root = ET.fromstring(xml)
+    root = ET.fromstring(xml).find("response")
+    if root == None:
+        print("utils.XMLdecoder.getCityList XML response not found")
+        return None
+
+    regionList = root.find("list")
 
 
-    for r in root.iter("region"):
+    for r in regionList.iter("region"):
         newCity = makeCity(r)
-        print(newCity)
-        cityList.append(newCity)
+        if not newCity == None:
+            print(newCity)
+            cityList.append(newCity)
+
     return cityList

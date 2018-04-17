@@ -4,10 +4,10 @@ import requests as req
 
 # This file will contain the functions to make API calls to Zillow.
 class Zillow:
-    def __init__(self):
+    def __init__(self, rest):
         self.id = "X1-ZWz1ga5ydrbpjf_8469v"
         self.routes = route.ZillowRoutes()
-
+        self.rest = rest
     def getHeader(self, data):
         d = data.__dict__
         d["zws-id"] = self.id
@@ -16,10 +16,10 @@ class Zillow:
     # Gets the cities within a given county and state
     def getCities(self, location):
         data = self.getHeader(location)
-        r = req.get(self.routes.GetRegionChildren, data)
-        # f = open("rest/testXML", "r")
-        # r = f.read()
-        cityList = decode.getCityList(r.text)
+        resp, err = self.rest.Get(self.routes.GetRegionChildren, data)
+        if not err == None:
+            print("rest.zillowCollector.getCities got a GET error: ", err)
+        cityList = decode.getCityList(resp)
         return cityList
 
 
