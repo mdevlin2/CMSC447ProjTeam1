@@ -19,12 +19,14 @@ class Place:
 
 # cities that are inside a location
 class City:
-    def __init__(self, name, id):
+    def __init__(self, name, lat, long, id):
         self.name = name
         self.id = id
+        self.long = long
+        self.lat = lat
 
     def __str__(self):
-        return "{ name: " + self.name + " id: " + self.id + " }"
+        return "{ name: " + self.name + " id: " + self.id + " lat: " + str(self.lat) + " long: " + str(self.long) + " }"
 
 # Location of a given state and county
 class Location:

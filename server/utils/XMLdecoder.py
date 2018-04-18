@@ -4,11 +4,14 @@ import models.location as loc
 def makeCity(e):
     name = e.find("name")
     id = e.find("id")
+    lat = e.find("longitude")
+    long = e.find("latitude")
+
     if name == None or id == None:
         print("utils.XMLdecoder.makeCity Could not find name or id of city ", e)
         return None
 
-    newCity = loc.City(name.text, id.text)
+    newCity = loc.City(name.text, lat.text, long.text, id.text)
     return newCity
 
 def validate(xml):
