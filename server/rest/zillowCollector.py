@@ -1,5 +1,6 @@
 import models.routes as route
 import utils.XMLdecoder as decode
+import utils.houseData as housing
 import requests as req
 
 # This file will contain the functions to make API calls to Zillow.
@@ -8,6 +9,7 @@ class Zillow:
         self.id = "X1-ZWz1ga5ydrbpjf_8469v"
         self.routes = route.ZillowRoutes()
         self.rest = rest
+
     def getHeader(self, data):
         d = data.__dict__
         d["zws-id"] = self.id
@@ -22,6 +24,7 @@ class Zillow:
         cityList = decode.getCityList(resp)
         return cityList
 
-
-    def getProperties(self, city):
-        print("todo")
+    # get properties
+    def getProperties(self, lat, long, maxRadius):
+        houses = housing.makeHouses(float(lat), float(long), int(maxRadius))
+        return houses

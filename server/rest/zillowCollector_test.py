@@ -13,27 +13,30 @@ def validateCity(city):
         return False
     return True
 
+def fail(msg):
+    print("*"*10)
+    print("*** zillowCollector UNIT TEST FAILED *** ")
+    print("***", msg)
+    print("*"*10)
+
+def success():
+    print("*"*10)
+    print("*** zillowCollector UNIT TEST PASSED *** ")
+    print("*"*10)
+
 # Happy path of the zillowCollector
-def TestZillowHappy():
+def TestCitiesRoute():
     rest = rst.mockRest(mockData.GetRegionChildrenResponse)
     z = zc.Zillow(rest)
     l = loc.Location("", "")
     cityList = z.getCities(l)
     if not len(cityList) == 3:
-        print("*"*10)
-        print("*** zillowCollector UNIT TEST FAILED *** ")
-        print("*** Length of city list is not correct")
-        print("*"*10)
+        fail("unexpected number of cities")
         return
     for c in cityList:
         if not validateCity(c):
-            print("*"*10)
-            print("*** zillowCollector UNIT TEST FAILED *** ")
-            print("*** Not a valid city: ", str(c))
-            print("*"*10)
+            fail("invalid city "+str(c))
             return
-    print("*"*10)
-    print("*** zillowCollector UNIT TEST PASSED *** ")
-    print("*"*10)
+    success()
     return
-TestZillowHappy()
+TestCitiesRoute()

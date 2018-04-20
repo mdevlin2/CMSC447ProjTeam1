@@ -4,12 +4,30 @@ import json
 # This can hold the different types of places
 class Type(Enum):
     UNDEFINED = 0
-    HOUSE = 1
-    AGENCY = 2
+    AGENCY = 1
+    GYM = 2
+
+# characterizing a house
+class HouseCharacteristics:
+    def __init__(self, price, bedrooms, bathrooms):
+        self.price = price
+
+        #Number of bathrooms and bedrooms
+        self.bedrooms = bedrooms
+        self.bathrooms = bathrooms
+
+# Describing a house
+class House:
+    def __init__(self, address, lat, long, characteristics):
+        self.address = address
+        self.lat = lat
+        self.long = long
+        self.characteristics = characteristics
+
 
 # Specific place or ammenity (just an idea, feel free to change)
 class Place:
-    def __init__(self, name, lat, long):
+    def __init__(self, name, lat, long, type):
         self.name = name
         self.lat = lat
         self.long = long
