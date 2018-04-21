@@ -28,7 +28,8 @@ def success():
 def TestCitiesRoute():
     rest = rst.mockRest(mockData.GetRegionChildrenResponse)
     z = zc.Zillow(rest)
-    l = loc.Location("", "")
+    l = loc.Location("")
+    l.addCounty("")
     cityList = z.getCities(l)
     if not len(cityList) == 3:
         fail("unexpected number of cities")
