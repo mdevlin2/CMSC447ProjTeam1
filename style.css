@@ -1,8 +1,8 @@
 body {
-    background-color: #f9f9f9; 
-    font-family: Georgia, 'Bitstream Charter', serif; 
-    color: #333; 
-    text-align: center; 
+    background-color: #f9f9f9;
+    font-family: Georgia, 'Bitstream Charter', serif;
+    color: #333;
+    text-align: center;
     height: 100%;
 }
 
@@ -54,15 +54,15 @@ body {
     text-align: center;
 }
 
-#wrapper { 
-    margin: 20px auto; 
-    width: 1024px; 
+#wrapper {
+    margin: 20px auto;
+    width: 95%;
     background-color: #fff;
     text-align: left;
     padding: 0 20px;
     border: 2px solid #e1e1e1;
     height: 80%;
-} 
+}
 
 
 /* header specific */
@@ -78,6 +78,13 @@ body {
 #header h1 a {
     color: #000;
     text-decoration: none;
+}
+
+.pageTitle {
+  /* text-shadow: 1px 1px 0 #444; */
+  font-size: 70px;
+  Color: DodgerBlue;
+  font-family: helvetica;
 }
 
 /* navigation bar styling */
@@ -134,26 +141,42 @@ a.button {
   text-decoration: none;
 }
 
-#resBar {
-    background-color: #FFF;
-    border-right: 60px solid #FFF;
-    border-radius: 10px;
+.resBar {
     padding-top: 2em;
+    margin: auto;
+    position:relative;
+}
+#filterTable{
+  position:relative;
+  top:auto;
 }
 
-#borderWrap {
-    border: 7px solid #c6d9ec;
+#filterTable {
+  position: relative;
+  padding-right: inherit;
+  min-width: 10%;
+  margin: auto;
+  max-width: 30%;
+  width: auto;
+}
+
+.filter{
+  height: auto;
+  position:inherit;
+  /* bottom: 700px; */
+  width: inherit;
+  margin-bottom: 1em;
+  overflow:auto;
+}
+
+.borderWrap {
+    border: 2px solid #c6d9ec;
     background-color: #c6d9ec;
     border-right: 2em solid #c6d9ec;
-    border-radius: 10px;
+    border-radius: 5px;
     padding-left: 1.2em;
-    height: 800px;
-    width: 1000px;
 }
 
-#resBar a {
-    color: blue;
-}
 
 #contentBoxes a {
     font-family: 'Open Sans',sans-serif;
@@ -167,4 +190,57 @@ a.button {
     font-size: .9em;
     line-height: 1.6em;
     color: #3A4145;
+}
+
+#map {
+  position: relative;
+  width: 50%;
+  height: -webkit-fill-available;
+  left:auto;
+
+}
+
+/* fixes a conflict between GMaps and Twitter Bootstrap */
+#map label {
+  display: inline;
+}
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
 }

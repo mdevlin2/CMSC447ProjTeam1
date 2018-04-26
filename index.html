@@ -1,5 +1,7 @@
  <DOCTYPE !HTML>
-<html>ssdf  
+<html>
+<script src="js/search.js"></script>
+<script src="js/markers.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
@@ -7,8 +9,13 @@
 </head>
 <body>
     <div id="wrapper">
+      <div class="pageTitle">
+        Coastal Home Search:<br />
+        Home Page
+      </div>
     <div id="header">
-        <img src="images/headerBG.png">
+        <!-- <img src="images/headerBG.png"> -->
+
     <div id="nav">
         <ul>
             <li><a href="http://localhost:8000/index.html">Home</a></li>
@@ -31,20 +38,14 @@
         </table>
         <br>
         <div id="submitbutton">
-            <button type="submit" style="font-size: 20px;">Select State</button>
+            <button id="submit_but" type="submit" style="font-size: 20px;">Select State</button>
         </div>
     </form>
     <form onsubmit="return searchMap()">
         <table>
-            <tr id="keyword" style="display: none; font-size: 18px;">
-                <th>Keyword (Optional):</th>
-                <th>
-                <input type="text" name="keyword" style="font-size: 18px;">
-                </th>
-            </tr>
             <tr id="MDc" style="font-size: 18px;">
                 <th>County</th>
-                <th>
+                <td>
                 <select name="countyMD" style="font-size: 18px;">
                     <option value="PGC">Prince George's County</option>
                     <option value="MC">Montgomery County</option>
@@ -69,37 +70,37 @@
                     <option value="TC">Talbot County</option>
                     <option value="KC">Kent County</option>
                 </select>
-                </th>
+              </td>
             </tr>
             <tr id="DEc" style="font-size: 18px;">
                 <th>County</th>
-                <th>
+                <td>
                 <select name="countyDE" style="font-size: 18px;">
                     <option value="NCC">New Castle County</option>
                     <option value="SC">Sussex County</option>
                     <option value="KC">Kent County</option>
                 </select>
-                </th>
+              </td>
             </tr>
             <tr id="cityMD" style="font-size: 18px;">
                 <th>City</th>
-                <th>
+                <td>
                 <select name="cityDE" style="font-size: 18px;">
                     <option value="NCC">New Castle County</option>
                     <option value="SC">Sussex County</option>
                     <option value="KC">Kent County</option>
                 </select>
-                </th>
+              </td>
             </tr>
             <tr id="cityDE" style="font-size: 18px;">
                 <th>City</th>
-                <th>
+                <td>
                 <select name="cityDE" style="font-size: 18px;">
                     <option value="NCC">New Castle County</option>
                     <option value="SC">Sussex County</option>
                     <option value="KC">Kent County</option>
                 </select>
-                </th>
+              </td>
             </tr>
             <tr id="finalsearch">
                 <th>
@@ -108,7 +109,8 @@
             </tr>
         </table>
     </form>
-    <script src="search.js"></script>
+
+
     </div>
 </body>
 </html>
