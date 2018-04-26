@@ -8,7 +8,6 @@ class PropertyMarker {
   }
 }
 
-var currentHouses = [];
 
 console.log("inside markers")
 function checkState(resp){
@@ -16,7 +15,8 @@ function checkState(resp){
 }
 
 function getPropertyRoute(lat, long){
-  return "http://localhost:5000/properties?lat="+lat.toString()+"&long="+long.toString()+"&maxRadius=30"
+  var slider = document.getElementById("searchRadius")
+  return "http://localhost:5000/properties?lat="+lat.toString()+"&long="+long.toString()+"&maxRadius="+slider.value.toString()
 }
 
 function newMarkers(data) {
@@ -28,6 +28,43 @@ function newMarkers(data) {
     console.log("adding" + house)
     // adding this marker to array which will be added to the new layer
     markerLayer.addLayer(newMarker)
+  }
+}
+
+function createHouseEntry(house){
+  var item = document.createElement("tr")
+  var address = document.createElement("td")
+  var addressButton = document.createElement("button")
+  var price = document.createElement("td")
+  var nBathrooms = document.createElement("td")
+  var nBeds = document.createElement("td")
+  var slider = document.getElementById("searchRadius")
+  addressButton.innerHTML = house.address
+  addressButton.className = "addressButton"
+  addressButton.onclick = function(){
+    var coors = L.latLng(house.lat, house.long)
+    mymap.setView(coors, slider.value)
+  }
+
+  address.appendChild(addressButton)
+  price.innerHTML = house.characteristics.price
+  nBathrooms.innerHTML = house.characteristics.bathrooms
+  nBeds.innerHTML = house.characteristics.bedrooms
+  item.appendChild(address)
+  item.appendChild(price)
+  item.appendChild(nBathrooms)
+  item.appendChild(nBeds)
+
+  return item
+}
+
+function updateResults(data){
+  console.log("updating results")
+  var list = document.getElementById("resultList")
+  for (index in data.data){
+    house = data.data[index]
+    var entry = createHouseEntry(house)
+    list.appendChild(entry)
   }
 }
 
@@ -43,8 +80,13 @@ function getProperties(lat, long){
     if (checkState(req)){
       var resp = JSON.parse(req.responseText)
       console.log("Should be getting markers")
+      // Filter the houses
+      houses = filterProperty(resp.data)
+
+      // Makes the markers
       newMarkers(resp)
-      currentHouses = resp.data
+      // Updates the result table
+      updateResults(resp)
       console.log("got some markers")
       console.log(resp)
     }

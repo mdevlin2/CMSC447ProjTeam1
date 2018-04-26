@@ -141,14 +141,28 @@ a.button {
   text-decoration: none;
 }
 
+
 .resBar {
     padding-top: 2em;
     margin: auto;
     position:relative;
+    overflow-y: scroll;
+    height: 200px;
+    text-align: center;
 }
+
+#resultList{
+  border-collapse: separate;
+  border: 1px solid black;
+  font-size: 23px;
+  width: 100%;
+
+}
+
 #filterTable{
   position:relative;
   top:auto;
+  font-size: 23px;
 }
 
 #filterTable {
@@ -166,7 +180,7 @@ a.button {
   /* bottom: 700px; */
   width: inherit;
   margin-bottom: 1em;
-  overflow:auto;
+  overflow-y:auto;
 }
 
 .borderWrap {
@@ -208,6 +222,12 @@ a.button {
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */
+}
+
+.addressButton{
+  height:100%;
+  width:100%;
+  font-size: 23px;
 }
 
 /* The slider itself */
