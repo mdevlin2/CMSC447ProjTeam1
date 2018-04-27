@@ -25,6 +25,8 @@ function newMarkers(data) {
   for (index in data.data){
     house = data.data[index]
     var newMarker = L.marker(L.latLng(house.lat, house.long))
+    // TODO: bind a pop up to every markers
+
     console.log("adding" + house)
     // adding this marker to array which will be added to the new layer
     markerLayer.addLayer(newMarker)
