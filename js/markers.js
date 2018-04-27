@@ -49,7 +49,10 @@ function createHouseEntry(house){
   }
 
   address.appendChild(addressButton)
-  price.innerHTML = house.characteristics.price
+  var money = house.characteristics.price.toFixed(2).replace(/./g, function(c, i, a) {
+    return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
+});
+  price.innerHTML = "$" + money
   nBathrooms.innerHTML = house.characteristics.bathrooms
   nBeds.innerHTML = house.characteristics.bedrooms
   item.appendChild(address)
