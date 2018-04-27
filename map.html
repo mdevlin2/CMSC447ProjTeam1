@@ -1,106 +1,89 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <script src="js/markers.js"></script>
+  <script src="js/filter.js"></script>
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery.address.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyAR5eeFETe-sMigouZtPABzHpyA02MGyjQ"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css"
+    integrity="sha256-LcmP8hlMTofQrGU6W2q3tUnDnDZ1QVraxfMkP060ekM="
+    crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js"
+          integrity="sha256-kdEnCVOWosn3TNsGslxB8ffuKdrZoGQdIdPwh7W1CsE="
+          crossorigin="anonymous"></script>   <!-- you'll need to include the following tags here
+         * google maps script tag
+         * your scripts tag
+  -->
+    </script>
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="wrapper">
+      <div class="pageTitle">
+        Coastal Home Search:<br />
+        Map
+      </div>
     <div id="header">
-      <img src="images/headerBG.png">
+
     <div id="nav">
       <ul>
         <li><a href="http://localhost:8000/index.html">Home</a></li>
         <li><a href="http://localhost:8000/map.html">Map</a></li>
+        <li><a href="http://localhost:8000/favorites.html">Favorites</a></li>
       </ul>
     </div>
+  </div>
+  <div id="mapContainer">
+    <div id="map">
+      <script src="js/map.js"></script>
     </div>
-
-    <table style="margin: 0px auto;">
-    <tr>
-      <th>
-      <div id='map_canvas' style="width: 800px;"></div>
-      </th>
-      <th height="1000px;">
-      <div id="borderWrap">
-          <p><b><u>Filters</u></b></p>
-          <p>Filter 1</p>
-          <p>Filter 2</p> 
-          <p>Filter 3</p>
-        </div>
-        </th>
-      </tr>
-    </table>
-      <u><h2>Results</h2></u>
-      <ul>
-        <li>First</li>
-        <li>Second</li>
-        <li>Third</li>
-        <li>Fourth</li>
-      </ul>
-
-    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="js/jquery.address.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyAR5eeFETe-sMigouZtPABzHpyA02MGyjQ"></script>
-    <script type="text/javascript" src="js/maps_lib.js"></script>
-    <script type='text/javascript'>
-      //<![CDATA[
-        $(window).resize(function () {
-          var h = $(window).height(),
-            offsetTop = 105; // Calculate the top offset
-        
-          $('#map_canvas').css('height', (h - offsetTop));
-        }).resize();
-        
-        $(function() {
-          var myMap = new MapsLib({
-            fusionTableId:      "1m4Ez9xyTGfY2CU6O-UgEcPzlS0rnzLU93e4Faa0",
-            googleApiKey:       "AIzaSyA3FQFrNr5W2OEVmuENqhb2MBB2JabdaOY",
-            locationColumn:     "geometry",
-            map_center:         [41.8781136, -87.66677856445312],
-            locationScope:      "chicago"
-          });
-
-          var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
-      
-          $(':checkbox').click(function(){
-            myMap.doSearch();
-          });
-
-          $(':radio').click(function(){
-            myMap.doSearch();
-          });
-          
-          $('#search_radius').change(function(){
-            myMap.doSearch();
-          });
-          
-          $('#search').click(function(){
-            myMap.doSearch();
-          });
-          
-          $('#find_me').click(function(){
-            myMap.findMe(); 
-            return false;
-          });
-          
-          $('#reset').click(function(){
-            myMap.reset(); 
-            return false;
-          });
-          
-          $(":text").keydown(function(e){
-              var key =  e.keyCode ? e.keyCode : e.which;
-              if(key === 13) {
-                  $('#search').click();
-                  return false;
-              }
-          });
-        });
-      //]]>
-      </script>
+    <div id="filterTable">
+      <div class="borderWrap filter" id="propertyFilter">
+        <p><b><u>Property</u></b></p>
+        Max Price:    <input type="text" id="maxPrice" /><br />
+        Minimum Price:<input type="text" id="minPrice" /><br />
       </div>
-    </body>
+
+      <div class="borderWrap filter" id="ammenityFilter">
+      <p><b><u>Ammentities</u></b></p>
+      <ul>
+
+      <li>Restaurants <input type="checkbox" id="restaurantsChk" /></li>
+      <li>Gyms <input type="checkbox" id="gymChk" /></li>
+      <li>Bike paths <input type="checkbox" id="bikeChk" /></li>
+      <li> Search radius:
+        <div class="slidecontainer">
+          <label id="radius">100</label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="searchRadius">
+        </div>
+      </li>
+    </ul>
+    <button id="updateButton" >Update</button>
+    </div>
+  </div>
+  </div>
+
+  <div class="borderWrap resBar">
+    <table id="resultList">
+      <th>
+        Address
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        bathrooms
+      </th>
+      <th>
+        beds
+      </th>
+    </table>
+
+  </div>
+</div>
+</body>
 </html>
