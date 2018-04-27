@@ -31,7 +31,7 @@ body {
 }
 
 #submitbutton {
-    display: inline-block;a
+    display: inline-block;
 }
 
 #searchBar {
@@ -83,7 +83,7 @@ body {
 .pageTitle {
   /* text-shadow: 1px 1px 0 #444; */
   font-size: 70px;
-  Color: DodgerBlue;
+  color: DodgerBlue;
   font-family: helvetica;
 }
 
