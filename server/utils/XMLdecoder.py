@@ -1,11 +1,17 @@
 import xml.etree.ElementTree as ET
 import models.location as loc
 
-def makeCity(e):
+def getData(e):
     name = e.find("name")
     id = e.find("id")
     lat = e.find("longitude")
     long = e.find("latitude")
+
+    return name, id, lat, long
+
+
+def makeCity(e):
+    name, id, lat, long = getData(e)
 
     if name == None or id == None:
         print("utils.XMLdecoder.makeCity Could not find name or id of city ", e)
@@ -21,7 +27,6 @@ def validate(xml):
         print("utils.XMLdecoder.validate XML response got a non-zero status code")
         return False
     return True
-
 
 def getCityList(xml):
     if not validate(xml):

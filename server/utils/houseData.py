@@ -1,9 +1,14 @@
 from models.location import HouseCharacteristics, House, Type
 import random as r
 NUM_OF_PROPERTIES = 100
-
+def newAddress():
+    addressWords = ["Fake", "Bogus", "Counterfeit", "Fabricated", "Mock", "Phony", "Forged", "False",
+                        "Copied", "False", "Wrong", "Sham", "Incorrect", "Mistake", "Help"]
+    roads = ["Rd", "Way", "St.", "Blvd", "Cir.", "Dr."]
+    return str(r.randint(1000, 9999)) + " " + addressWords[r.randint(0, len(addressWords)-1)] + " " +roads[r.randint(0, len(roads)-1)]
 def makeHouses(lat, long, maxRadius):
     houses = list()
+
     for i in range(NUM_OF_PROPERTIES):
         lat_off = r.randint(-maxRadius, maxRadius)/100
         long_off = r.randint(-maxRadius, maxRadius)/100
@@ -11,6 +16,6 @@ def makeHouses(lat, long, maxRadius):
         bedrooms = r.randint(1, 4)
         bathrooms = r.randint(1, 5)
         hc = HouseCharacteristics(price, bedrooms, bathrooms)
-        newHouse = House("1234 notFake rd", lat + lat_off, long + long_off, hc.__dict__)
+        newHouse = House( newAddress(), lat + lat_off, long + long_off, hc.__dict__)
         houses.append(newHouse)
     return houses
