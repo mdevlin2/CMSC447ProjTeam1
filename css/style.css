@@ -12,18 +12,22 @@ body {
 
 #DEc {
     display: none;
+    font-size: 18px;
 }
 
 #MDc {
     display: none;
+    font-size: 18px;
 }
 
 #cityMD {
     display: none;
+    font-size: 18px;
 }
 
 #cityDE {
     display: none;
+    font-size: 18px;
 }
 
 #finalsearch {
@@ -184,8 +188,6 @@ a.button {
   margin: 10px;
   padding:5px;
 }
-
-
 
 #mapContainer{
   width:auto;
