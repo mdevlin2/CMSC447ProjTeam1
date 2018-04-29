@@ -12,22 +12,18 @@ body {
 
 #DEc {
     display: none;
-    font-size: 18px;
 }
 
 #MDc {
     display: none;
-    font-size: 18px;
 }
 
 #cityMD {
     display: none;
-    font-size: 18px;
 }
 
 #cityDE {
     display: none;
-    font-size: 18px;
 }
 
 #finalsearch {
@@ -35,7 +31,7 @@ body {
 }
 
 #submitbutton {
-    display: inline-block;
+    display: inline-block;a
 }
 
 #searchBar {
@@ -87,7 +83,7 @@ body {
 .pageTitle {
   /* text-shadow: 1px 1px 0 #444; */
   font-size: 70px;
-  color: DodgerBlue;
+  Color: DodgerBlue;
   font-family: helvetica;
 }
 
@@ -188,6 +184,8 @@ a.button {
   margin: 10px;
   padding:5px;
 }
+
+
 
 #mapContainer{
   width:auto;
