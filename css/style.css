@@ -170,6 +170,9 @@ a.button {
     overflow-y: scroll;
     height: 200px;
     text-align: center;
+    height: 30%;
+    max-height: 300px;
+    bottom:100px;
 }
 
 #resultList{
@@ -186,16 +189,17 @@ a.button {
 }
 
 #filterTable {
-  position: absolute;
+  /* position: absolute; */
+  position:relative;
   padding-right: inherit;
   min-width: 10%;
   margin: 10px;
-  max-width: 25%;
+  max-width: 55%;
   max-height: 60%;
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
-  bottom: 10%;
-  left: 50%;
+  height: 80%;
+  width: 100%;
+  bottom: 80%;
+  left: 100%;
 }
 
 .filter{
@@ -209,8 +213,8 @@ a.button {
 
 
 #mapContainer{
-  width:auto;
-  height:auto;
+  width:800px;
+  height:800px;
   margin:0px;
 }
 
@@ -239,8 +243,10 @@ a.button {
 
 #map {
   position: relative;
-  width: 50%;
-  height: -webkit-fill-available;
+  width: 100%;
+  height: 80%;
+  /* min-width: 40%;
+  min-height: 50%; */
   left:auto;
 
 }
