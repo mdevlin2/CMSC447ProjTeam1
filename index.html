@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script src="js/search.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/select.js"></script>
     <div id="wrapper">
         <div class="pageTitle">
             Coastal Home Search:<br />
@@ -22,92 +23,47 @@
     </div>
     </div>
     <br>
-    <form onsubmit="return searchState()">
-        <table>
-        <tr id="stateSelect" style="font-size: 20px;">
-            <th style="padding: 0 15px 0 0;">State:</th>
-            <th style="padding: 0 0 0 15px;">
-            <select id="state" style="font-size: 20px;">
-                <option value="MD">Maryland</option>
-                <option value="DE">Delaware</option>
+    <form>
+        <table class="searchTable">
+        <tr id="stateSelect">
+            <th>State:</th>
+            <td>
+              <select id="stateSel">
+              <option>
+                Select a state
+              </option>
             </select>
+            </td>
             </th>
         </tr>
-        </table>
-        <br>
-        <div id="submitbutton">
-            <button id="submit_but" type="submit" style="font-size: 20px;">Select State</button>
-        </div>
-    </form>
-    <form onsubmit="return searchMap()">
-        <table>
-            <tr id="MDc" style="font-size: 18px;">
-                <th>County</th>
-                <td>
-                <select name="countyMD" style="font-size: 18px;">
-                    <option value="PGC">Prince George's County</option>
-                    <option value="MC">Montgomery County</option>
-                    <option value="AAC">Anne Arundel</option>
-                    <option value="HC">Hartford County</option>
-                    <option value="BC">Baltimore County</option>
-                    <option value="CC">Cecil County</option>
-                    <option value="QAC">Queen Anne County</option>
-                    <option value="AC">Allegany County</option>
-                    <option value="WC">Wicomico County</option>
-                    <option value="GC">Garrett County</option>
-                    <option value="FC">Frederick County</option>
-                    <option value="DC">Dorchester County</option>
-                    <option value="WC">Worcester County</option>
-                    <option value="HC">Howard County</option>
-                    <option value="CaC">Caroll County</option>
-                    <option value="ChC">Charles County</option>
-                    <option value="SC">Somerset County</option>
-                    <option value="WaC">Washington County</option>
-                    <option value="SMC">St. Mary's County</option>
-                    <option value="CarC">Caroline County</option>
-                    <option value="TC">Talbot County</option>
-                    <option value="KC">Kent County</option>
-                </select>
-              </td>
-            </tr>
-            <tr id="DEc">
-                <th>County</th>
-                <td>
-                <select name="countyDE" style="font-size: 18px;">
-                    <option value="NCC">New Castle County</option>
-                    <option value="SC">Sussex County</option>
-                    <option value="KC">Kent County</option>
-                </select>
-              </td>
-            </tr>
-            <tr id="cityMD">
-                <th>City</th>
-                <td>
-                <select name="cityDE" style="font-size: 18px;">
-                    <option value="NCC">New Castle County</option>
-                    <option value="SC">Sussex County</option>
-                    <option value="KC">Kent County</option>
-                </select>
-              </td>
-            </tr>
-            <tr id="cityDE">
-                <th>City</th>
-                <td>
-                <select name="cityDE" style="font-size: 18px;">
-                    <option value="NCC">New Castle County</option>
-                    <option value="SC">Sussex County</option>
-                    <option value="KC">Kent County</option>
-                </select>
-              </td>
-            </tr>
-            <tr id="finalsearch">
-                <th>
-                    <input type="submit" style="font-size: 18px;">
-                </th>
-            </tr>
+        <tr id="countySelRow">
+          <th>County: </th>
+          <td>
+          <select id="countySel">
+            <option>
+              Select a county
+            </option>
+          </select>
+          </td>
+        </tr>
+        <tr id="citySelRow">
+          <th>City: </th>
+          <td>
+          <select id="citySel">
+          <option>
+            Select a city
+          </option>
+          </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="searchButton" type="submit">Search</button>
+          </td>
+        </tr>
         </table>
     </form>
-
+    <img src="images/loading.gif" id = "loadingIcon" class="loadingIcon" />
 
     </div>
 </body>

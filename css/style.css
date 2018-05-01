@@ -6,32 +6,53 @@ body {
     height: 100%;
 }
 
-#keyword {
+table.searchTable{
+  font-family: Helvetica;
+}
+select {
+  font-size: 24px;
+  font-family: Helvetica;
+  border: 10px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: DodgerBlue;
+  margin: 10%;
+}
+button#searchButton{
+  font-size: 24px;
+  font-family: Helvetica;
+  display: none;
+  border: 10px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: DodgerBlue;
+}
+
+tr#citySelRow {
+  display: none;
+}
+
+tr#countySelRow {
     display: none;
 }
 
-#DEc {
-    display: none;
+.searchButton {
+  display: none;
 }
 
-#MDc {
-    display: none;
+img.loadingIcon {
+  display: none;
+  width: 10%;
 }
 
-#cityMD {
-    display: none;
-}
+th {
+  font-size: 24px;
+  font-family: Helvetica;
 
-#cityDE {
-    display: none;
+  color: DodgerBlue;
 }
-
 #finalsearch {
     display: none;
-}
-
-#submitbutton {
-    display: inline-block;a
 }
 
 #searchBar {
@@ -107,7 +128,6 @@ body {
     line-height: 46px;
     padding: 0 10;
     text-decoration: none;
-    display: block;
     padding: 0 10px;
 }
 #nav ul li a:hover {
@@ -117,6 +137,7 @@ body {
 
 table {
     border-collapse: collapse;
+    font-size: 18px;
 }
 
 a {

@@ -4,6 +4,9 @@ import utils.XMLdecoder as decode
 import utils.houseData as housing
 import requests as req
 
+def formatString(str):
+    return str.upper().replace("'", "").replace(" ", "").replace('"', "")
+
 # This file will contain the functions to make API calls to Zillow.
 class Zillow:
     def __init__(self, rest):
@@ -18,6 +21,7 @@ class Zillow:
 
     # Gets the cities within a given county and state
     def getCities(self, location):
+        print("Getting from", location)
         data = self.getHeader(location)
         data['childtype'] = "city"
         resp, err = self.rest.Get(self.routes.GetRegionChildren, data)
@@ -43,7 +47,11 @@ class Zillow:
 
         # getCityList returns City objects, but it will have county information
         countyList = decode.getCityList(resp)
+        lookingFor = formatString(location.county)
+        print("Looking for", lookingFor)
         for county in countyList:
-            if county.name.upper() == location.county.upper():
+            checkName = formatString(county.name)
+            print("Checking ", checkName, " == ", lookingFor)
+            if checkName == lookingFor:
                 return models.location.County(county.name, county.lat, county.long)
         return None

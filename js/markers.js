@@ -9,21 +9,11 @@ class PropertyMarker {
 }
 
 
-console.log("inside markers")
-function checkState(resp){
-  return (resp.readyState == 4 && resp.status == 200);
-}
-
-function getPropertyRoute(lat, long){
-  var slider = document.getElementById("searchRadius")
-  return "http://localhost:5000/properties?lat="+lat.toString()+"&long="+long.toString()+"&maxRadius="+slider.value.toString()
-}
-
-function newMarkers(data) {
+function newMarkers(houses) {
   console.log("making markers")
   markerLayer.clearLayers()
-  for (index in data.data){
-    house = data.data[index]
+  for (index in houses){
+    house = houses[index]
     var newMarker = L.marker(L.latLng(house.lat, house.long))
     // TODO: bind a pop up to every markers
 
@@ -63,37 +53,47 @@ function createHouseEntry(house){
   return item
 }
 
-function updateResults(data){
+function updateResults(houses){
   console.log("updating results")
   var list = document.getElementById("resultList")
-  for (index in data.data){
-    house = data.data[index]
+  for (index in houses){
+    house = houses[index]
     var entry = createHouseEntry(house)
     list.appendChild(entry)
   }
 }
-
+// get properties will make an http to the server to get a list of properties
 function getProperties(lat, long){
   var url = getPropertyRoute(lat, long)
   var req = new XMLHttpRequest()
   console.log("getting from" + url)
+
+  // Start http request
   req.open("GET", url)
   req.setRequestHeader("content-type", "application/x-www-form-urlencoded")
 
+  // Wait for the http request to return
   req.onreadystatechange = function(){
-    console.log("state change")
-    if (checkState(req)){
-      var resp = JSON.parse(req.responseText)
-      console.log("Should be getting markers")
-      // Filter the houses
-      houses = filterProperty(resp.data)
+    // Check if we got a response yet
+    if (requestReady(req)){
 
-      // Makes the markers
-      newMarkers(resp)
+      // Array of houses
+      var resp = JSON.parse(req.responseText)
+      var houses = resp.data
+
+      console.log("Should be getting markers")
+
+      // resp.data contains all the house data
+      // Filter the houses
+      //
+      houses = filterProperty(houses)
+
+      // Places the markers on the map
+      newMarkers(houses)
+
       // Updates the result table
-      updateResults(resp)
-      console.log("got some markers")
-      console.log(resp)
+      updateResults(houses)
+
     }
   }
   req.send()
