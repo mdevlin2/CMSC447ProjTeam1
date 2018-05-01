@@ -31,11 +31,3 @@ function getMarkerFormat(place){
     return "<a href=" + place.fullurl + ">" + place.title + "</a>";
   }
 }
-<<<<<<< HEAD
-=======
-
-function makeMarkers(data){
-  markerLayer.clearLayers()
-
-}
->>>>>>> 22d2a8b798be20bc2ab595e30ee3283055db74a4
