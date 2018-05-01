@@ -85,7 +85,6 @@ function getProperties(lat, long){
 
       // resp.data contains all the house data
       // Filter the houses
-      //
       houses = filterProperty(houses)
 
       // Places the markers on the map
@@ -105,7 +104,11 @@ window.onload = function(){
   var radius = document.getElementById("radius");
   slider.oninput = function(){
     radius.innerHTML = slider.value
-
   }
-  getProperties(umbc_lat, umbc_long)
+  var selectLat = parseFloat(localStorage.getItem("selectedLat"))
+  var selectLong = parseFloat(localStorage.getItem("selectedLong"))
+
+  var place = L.latLng(selectLat, selectLong)
+  mymap.setView(place, 30)
+  getProperties(selectLat, selectLong)
 }

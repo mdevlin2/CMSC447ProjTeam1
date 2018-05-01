@@ -123,7 +123,7 @@ window.onload = function () {
 				console.log("got cities" + cityList)
 				for (index in cityList){
 					console.log("adding" + cityList[index].name)
-					citySel.options[citySel.options.length] = new Option(cityList[index].name, index)
+					citySel.options[citySel.options.length] = new Option(cityList[index].name, JSON.stringify(cityList[index]))
 				}
 				citySelRow.style.display = "table-row"
 
@@ -134,9 +134,16 @@ window.onload = function () {
 
 	citySel.onchange = function() {
 		if (this.selectedIndex < 1) { return; }
+		console.log(this.value)
+		var house = JSON.parse(this.value)
 		submitBut.style.display = "inline-block"
+		localStorage.setItem('selectedLat', house.lat);
+		localStorage.setItem('selectedLong', house.long);
+		console.log("setting: " + house.lat)
+		console.log("setting: " + house.long)
 	}
 }
+
 
 function getCitiesRequest(state, county){
 	var url = getCitiesRoute(state, county)

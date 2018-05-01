@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <script src="js/search.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/select.js"></script>
     <div id="wrapper">
@@ -23,7 +24,7 @@
     </div>
     </div>
     <br>
-    <form>
+    <form onsubmit="return searchMap()">
         <table class="searchTable">
         <tr id="stateSelect">
             <th>State:</th>

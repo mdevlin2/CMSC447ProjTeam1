@@ -1,14 +1,9 @@
 var mymap = L.map('map');
-var umbc_lat = 39.25560152079427
-var umbc_long = -76.71099543571474
-var umbc = L.latLng(umbc_lat, umbc_long)
 var markerLayer = L.layerGroup()
 
 function checkState(resp){
   return (resp.readyState == 4 && resp.status == 200);
 }
-
-mymap.setView(umbc,20);
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}.png',
 {
