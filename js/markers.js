@@ -30,12 +30,26 @@ function createHouseEntry(house){
   var price = document.createElement("td")
   var nBathrooms = document.createElement("td")
   var nBeds = document.createElement("td")
+  var saveButton = document.createElement("button")
   var slider = document.getElementById("searchRadius")
   addressButton.innerHTML = house.address
   addressButton.className = "addressButton"
   addressButton.onclick = function(){
     var coors = L.latLng(house.lat, house.long)
     mymap.setView(coors, slider.value)
+  }
+  saveButton.innerHTML="Save"
+  saveButton.style.class = "saveButton"
+  saveButton.onclick = function(){
+    var arrJson = localStorage.getItem("savedHouses")
+    if (arrJson == null){
+      arrJson = '[]'
+    }
+    var houseArr = JSON.parse(arrJson)
+    houseArr.push(house)
+    var saveInfo = JSON.stringify(houseArr)
+    console.log(saveInfo)
+    localStorage.setItem("savedHouses", saveInfo)
   }
 
   address.appendChild(addressButton)
@@ -49,6 +63,7 @@ function createHouseEntry(house){
   item.appendChild(price)
   item.appendChild(nBathrooms)
   item.appendChild(nBeds)
+  item.appendChild(saveButton)
 
   return item
 }
