@@ -150,6 +150,7 @@ def query_api(term, latitude, longitude, radius):
         term (str): The search term to query.
         location (str): The location of the business to query.
     """
+    results= {}
     response = search_lat(API_KEY, term, latitude, longitude, radius)
 
     businesses = response.get('businesses')
@@ -158,6 +159,8 @@ def query_api(term, latitude, longitude, radius):
         print(u'No businesses for {0} .'.format(term))
         return
 
+
+    results = {}
     business_id = businesses[0]['id']
     business_id1 = businesses[1]['id']
     business_id2 = businesses[2]['id']
@@ -168,19 +171,31 @@ def query_api(term, latitude, longitude, radius):
     response = get_business(API_KEY, business_id)
     print(response['name'])
 
+    results['name1'] =  response['name']
+
     response = get_business(API_KEY, business_id1)
     print(response['name'])
+
+    results['name2'] =  response['name']
 
     response = get_business(API_KEY, business_id2)
     print(response['name'])
 
+    results['name3'] =  response['name']
+
+    print()
+    json_string = json.dumps(results)
+    print(json_string)
+    return results
+
 def main():
 
-    path = "Gyms"
+    path = "Bicycle Paths"
     lat = 39.268608
     lon = -76.815590
     radius = 24140 # in meters
     response = search_lat(API_KEY, path, lat, lon, radius)
+
 
 
     try:
