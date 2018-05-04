@@ -59,7 +59,7 @@ BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 # Defaults for our simple example.
 DEFAULT_TERM = 'Restaurants'
 DEFAULT_LOCATION = 'Baltimore, MD'
-SEARCH_LIMIT = 3
+SEARCH_LIMIT = 25
 
 
 def request(host, path, api_key, url_params=None):
@@ -159,33 +159,39 @@ def query_api(term, latitude, longitude, radius):
         print(u'No businesses for {0} .'.format(term))
         return
 
+    # find the minimum search limit    
+    limit = SEARCH_LIMIT
+    if len(businesses) < SEARCH_LIMIT:
+        limit = len(businesses)
 
-    results = {}
-    business_id = businesses[0]['id']
-    business_id1 = businesses[1]['id']
-    business_id2 = businesses[2]['id']
+    for i in range(limit):
+        results = {}
+        business_id = businesses[0]['id']
+        business_id1 = businesses[1]['id']
+        business_id2 = businesses[2]['id']
+        print(businesses)
 
-    print(u'{0} businesses found, querying business info ' \
-        'for the top 3 results "" ...'.format(
-            len(businesses), business_id))
-    response = get_business(API_KEY, business_id)
-    print(response['name'])
+        print(u'{0} businesses found, querying business info ' \
+            'for the top 3 results "" ...'.format(
+                len(businesses), business_id))
+        response = get_business(API_KEY, business_id)
+        print(response['name'])
 
-    results['name1'] =  response['name']
+        results['name1'] =  response['name']
 
-    response = get_business(API_KEY, business_id1)
-    print(response['name'])
+        response = get_business(API_KEY, business_id1)
+        print(response['name'])
 
-    results['name2'] =  response['name']
+        results['name2'] =  response['name']
 
-    response = get_business(API_KEY, business_id2)
-    print(response['name'])
+        response = get_business(API_KEY, business_id2)
+        print(response['name'])
 
-    results['name3'] =  response['name']
+        results['name3'] =  response['name']
 
-    print()
-    json_string = json.dumps(results)
-    print(json_string)
+        print()
+        json_string = json.dumps(results)
+        print(json_string)
     return results
 
 def main():

@@ -1,20 +1,14 @@
-class PropertyMarker {
-  constructor(price, lat, long, numBaths, numBeds){
-    this.price = price
-    this.lat = lat
-    this.long = long
-    this.numBaths = numBaths
-    this.numBeds = numBeds
-  }
-}
-
-
 function newMarkers(houses) {
   console.log("making markers")
   markerLayer.clearLayers()
   for (index in houses){
     house = houses[index]
+    var address = house.address;
+    var bathrooms = house.characteristics.bathrooms;
+    var bedrooms = house.characteristics.bedrooms;
+    var price = house.characteristics.price;
     var newMarker = L.marker(L.latLng(house.lat, house.long))
+    newMarker.bindPopup("<h2><b>Property Information</b></h2>" +"Address: " + address + "<br>" +"Number of bathrooms: " + bathrooms +"<br>" + "Number of bedrooms: " +bedrooms + "<br>" + "Price: " + price)
     // TODO: bind a pop up to every markers
 
     console.log("adding" + house)

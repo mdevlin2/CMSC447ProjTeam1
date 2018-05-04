@@ -6,6 +6,7 @@ import rest.zillowCollector as zc
 from models.location import Location
 from models.http import Response
 from utils.rest import restUtil
+import rest.yelp as yelp
 
 app = Flask(__name__)
 CORS(app)
@@ -36,6 +37,18 @@ def makeResponse(data, err):
     resp = Response(nl)
     resp.err = err
     return jsonify(resp.__dict__)
+
+# Params: { "lat": int, "long": int, "radius": int }
+@app.route('/ammenities', methods=['GET'])
+def getAmmenitiesRoute():
+    print("Getting ammenities")
+    lat, long = getLatLong(request.args)
+    print(request.args)
+    data = yelp.query_api(None, lat, long, radius)
+    print(data)
+    resp = {"data": data, "err": 0}
+    return jsonify(resp)
+
 
 # Params: { "lat": int, "long": int, "maxRadius": int}
 @app.route('/properties', methods=['GET'])
