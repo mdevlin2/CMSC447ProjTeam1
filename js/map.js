@@ -1,5 +1,6 @@
 var mymap = L.map('map');
 var markerLayer = L.layerGroup()
+var ammenityLayer = L.layerGroup()
 
 function checkState(resp){
   return (resp.readyState == 4 && resp.status == 200);
@@ -12,6 +13,7 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voya
               'Imagery © <a href="http://mapbox.com">Mapbox</a>',
           id: 'mapbox.streets'}).addTo(mymap);
 mymap.addLayer(markerLayer)
+mymap.addLayer(ammenityLayer)
 
 function calculateRadius(map){
   var distance = map.getBounds().getNorthWest().distanceTo(map.getBounds().getSouthEast());

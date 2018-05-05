@@ -55,7 +55,7 @@ def validateAmmenitiesRoute(args):
 def getAmmenitiesRoute():
     print("Getting ammenities")
     req = request.args
-
+    print(req)
     if not validateAmmenitiesRoute(req):
         print("Invalid args: ", req)
         return jsonify({"data": "invalid args", "err": 1})

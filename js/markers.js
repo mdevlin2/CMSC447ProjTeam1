@@ -1,4 +1,25 @@
-function newMarkers(houses) {
+
+var markerIcons = {
+  "restaurant": L.icon({iconUrl: "images/restaurant.png"}),
+  "gym": L.icon({iconUrl: "images/gym.png"}),
+  "pool": L.icon({iconUrl: "images/pool.png"}),
+  "bike_paths": L.icon({iconUrl: "images/bike.png"})
+}
+
+
+function loadingOn(loading) {
+	loading.style.display = "block;"
+  console.log("changing")
+	return
+}
+
+function loadingOff(loading){
+	// loading.style.display = "none"
+	return
+}
+
+
+function newPropertyMarker(houses) {
   console.log("making markers")
   markerLayer.clearLayers()
   for (index in houses){
@@ -14,6 +35,29 @@ function newMarkers(houses) {
     console.log("adding" + house)
     // adding this marker to array which will be added to the new layer
     markerLayer.addLayer(newMarker)
+  }
+}
+
+function newAmmenityMarkers(ammenities, terms){
+  ammenityLayer.clearLayers()
+  if (Object.keys(ammenities).length == 0){
+    console.log("no results")
+    return
+  }
+
+  for (t_index in terms){
+    var term = terms[t_index]
+    var ammenityList = ammenities[term]
+    console.log(term)
+    for (index in ammenityList){
+      var ammenity = ammenityList[index]
+      var lat = ammenity.lat
+      var long = ammenity.long
+      var newMarker = L.marker(L.latLng(lat, long))
+      newMarker.bindPopup("<h2><b>"+ammenity.name+"</b></h2>")
+      newMarker.setIcon(markerIcons[term])
+      ammenityLayer.addLayer(newMarker)
+    }
   }
 }
 
@@ -97,7 +141,7 @@ function getProperties(lat, long){
       houses = filterProperty(houses)
 
       // Places the markers on the map
-      newMarkers(houses)
+      newPropertyMarker(houses)
 
       // Updates the result table
       updateResults(houses)
@@ -107,10 +151,57 @@ function getProperties(lat, long){
   req.send()
 }
 
+function getAmmenities(){
+  var restaurants = document.getElementById("restaurantsChk")
+  var gyms = document.getElementById("gymChk")
+  var bikes = document.getElementById("bikeChk")
+  var pools = document.getElementById("poolChk")
+  var searchRadius = document.getElementById("searchRadius")
+  var loading = document.getElementById("loading")
+
+  loading.style.display = "inline-block"
+  var chksArr = [restaurants, gyms, bikes, pools]
+  var terms=""
+  var termList = []
+  // Find out which check boxes are checked
+  for (index in chksArr){
+    if (chksArr[index].checked){
+      terms=terms+chksArr[index].value+","
+      termList.push(chksArr[index].value)
+    }
+  }
+
+  // trim the last comma
+  if (terms != ""){
+    terms = terms.substring(0, terms.length-1)
+  } else { return }
+  console.log(terms)
+  console.log("Finding some new ammenities")
+  var lat = mymap.getCenter().lat
+  var long = mymap.getCenter().lng
+  var radius = searchRadius.value
+
+  var url = getAmmenitiesRoute(lat, long, radius, terms)
+  var req = new XMLHttpRequest()
+  req.open("GET", url)
+  req.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+  req.onreadystatechange = function(){
+    if (requestReady(req)){
+      console.log(req.responseText)
+      var resp = JSON.parse(req.responseText)
+      newAmmenityMarkers(resp.data, termList)
+      loading.style.display = "none"
+    }
+  }
+  req.send()
+
+}
+
 window.onload = function(){
   console.log("loaded")
   var slider = document.getElementById("searchRadius");
   var radius = document.getElementById("radius");
+  var updateButton = document.getElementById("updateButton")
   slider.oninput = function(){
     radius.innerHTML = slider.value
   }
@@ -120,4 +211,10 @@ window.onload = function(){
   var place = L.latLng(selectLat, selectLong)
   mymap.setView(place, 30)
   getProperties(selectLat, selectLong)
+
+  updateButton.onclick = function(){
+    console.log(loading)
+    console.log("clicked")
+    getAmmenities()
+  }
 }

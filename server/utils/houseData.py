@@ -10,8 +10,8 @@ def newAddress():
 def makeHouses(lat, long, maxRadius):
     houses = list()
     for j in range(NUM_OF_CLUSTERS):
-        clusterLatOff = r.randint(-maxRadius, maxRadius)/4500
-        clusterLongOff = r.randint(-maxRadius, maxRadius)/4500
+        clusterLatOff = r.randint(-maxRadius, maxRadius)/800
+        clusterLongOff = r.randint(-maxRadius, maxRadius)/800
         for i in range(NUM_OF_PROPERTIES):
             latOff = r.randint(-maxRadius, maxRadius)/12000 + clusterLatOff
             longOff = r.randint(-maxRadius, maxRadius)/12000 + clusterLongOff

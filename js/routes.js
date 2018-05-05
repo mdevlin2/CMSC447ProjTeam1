@@ -14,3 +14,8 @@ function getPropertyRoute(lat, long){
   var slider = document.getElementById("searchRadius")
   return "http://localhost:5000/properties?lat="+lat.toString()+"&long="+long.toString()+"&maxRadius="+slider.value.toString()
 }
+
+function getAmmenitiesRoute(lat, long, radius, terms){
+  var url = "http://localhost:5000/ammenities?lat="+lat.toString()+"&long="+long.toString()+"&radius="+radius+"&terms="+terms
+  return url
+}

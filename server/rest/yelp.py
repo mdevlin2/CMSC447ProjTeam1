@@ -61,7 +61,7 @@ BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
 # Defaults for our simple example.
 DEFAULT_TERM = 'Restaurants'
 DEFAULT_LOCATION = 'Baltimore, MD'
-SEARCH_LIMIT = 25
+SEARCH_LIMIT = 10
 
 # Make sure the business dictionary has all the keys we need
 def validateBusiness(business):
@@ -194,6 +194,7 @@ def getAmmenities(terms, latitude, longitude, radius):
         return results
 
     for term in terms:
+        print(term)
         businessList = list()
         response = search_lat(API_KEY, term, latitude, longitude, meterRadius)
         print(response)
@@ -220,7 +221,6 @@ def getAmmenities(terms, latitude, longitude, radius):
                 businessList.append(newPlace.__dict__)
         results[term] = businessList
 
-    print("got results: ", results)
     return results
 
 def main():

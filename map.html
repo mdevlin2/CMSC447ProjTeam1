@@ -2,7 +2,6 @@
 <html>
 <head>
   <script src="js/routes.js"></script>
-  <script src="js/markers.js"></script>
   <script src="js/filter.js"></script>
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/jquery.address.js"></script>
@@ -18,6 +17,8 @@
          * your scripts tag
   -->
     </script>
+    <script src="js/markers.js"></script>
+
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
     <link rel="stylesheet" href="css/style.css">
@@ -53,17 +54,18 @@
       <p><b><u>Ammentities</u></b></p>
       <ul>
 
-      <li>Restaurants <input type="checkbox" id="restaurantsChk" /></li>
-      <li>Gyms <input type="checkbox" id="gymChk" /></li>
-      <li>Bike paths <input type="checkbox" id="bikeChk" /></li>
+      <li>Restaurants <input type="checkbox" id="restaurantsChk" value="restaurant" /></li>
+      <li>Gyms <input type="checkbox" id="gymChk" value="gym"/></li>
+      <li>Bike paths <input type="checkbox" id="bikeChk" value="bike_paths" /></li>
+      <li>Pools <input type="checkbox" id="poolChk" value="pool"/></li>
       <li> Search radius:
         <div class="slidecontainer">
           <label id="radius">100</label>
-          <input type="range" min="1" max="100" value="50" class="slider" id="searchRadius">
+          <input type="range" min="1" max="30" value="5" class="slider" id="searchRadius">
         </div>
       </li>
     </ul>
-    <button id="updateButton" >Update</button>
+    <button id="updateButton" >Update</button> <img src="images/loading.gif" id="loading" class="loadingIcon" />
     </div>
   </div>
   </div>
