@@ -17,13 +17,15 @@ Sample usage of the program:
 `python sample.py --term="bars" --location="San Francisco, CA"`
 """
 from __future__ import print_function
-
+from models.location import Place
+import json
 import argparse
 import json
 import pprint
 import requests
 import sys
 import urllib
+
 
 
 # This client code can run on Python 2.x or 3.x.  Your imports can be
@@ -61,6 +63,37 @@ DEFAULT_TERM = 'Restaurants'
 DEFAULT_LOCATION = 'Baltimore, MD'
 SEARCH_LIMIT = 25
 
+# Make sure the business dictionary has all the keys we need
+def validateBusiness(business):
+    if not "name" in business:
+        return False
+
+    if not "coordinates" in business:
+        return False
+
+
+
+    return True
+
+def buildPlace(term, business):
+    name = business["name"]
+    id = business["id"]
+    lat = business["coordinates"]["latitude"]
+    long = business["coordinates"]["longitude"]
+    title = "N/A"
+    phone = "N/A"
+
+    if "categories" in business:
+        if "title" in business["categories"]:
+            title = business["categories"]["title"]
+    if "phone" in business:
+        phone = business["phone"]
+
+    newPlace = Place(name, lat, long, term)
+    newPlace.phone = phone
+    newPlace.title = title
+    return newPlace
+
 
 def request(host, path, api_key, url_params=None):
     """Given your API_KEY, send a GET request to the API.
@@ -84,6 +117,8 @@ def request(host, path, api_key, url_params=None):
     }
 
     print(u'Querying {0} ...'.format(url))
+    print(url_params)
+    print(headers)
 
     response = requests.request('GET', url, headers=headers, params=url_params)
 
@@ -143,55 +178,49 @@ def get_business(api_key, business_id):
     return request(API_HOST, business_path, api_key)
 
 
-def query_api(term, latitude, longitude, radius):
+def getAmmenities(terms, latitude, longitude, radius):
     """Queries the API by the input values from the user.
 
     Args:
         term (str): The search term to query.
         location (str): The location of the business to query.
     """
-    results= {}
-    response = search_lat(API_KEY, term, latitude, longitude, radius)
+    results = dict()
+    print("lat: ", latitude, "long: ", longitude)
+    meterRadius = radius * 1609
 
-    businesses = response.get('businesses')
+    if len(terms) == 0:
+        print("terms is empty")
+        return results
 
-    if not businesses:
-        print(u'No businesses for {0} .'.format(term))
-        return
+    for term in terms:
+        businessList = list()
+        response = search_lat(API_KEY, term, latitude, longitude, meterRadius)
+        print(response)
+        businesses = response.get('businesses')
 
-    # find the minimum search limit    
-    limit = SEARCH_LIMIT
-    if len(businesses) < SEARCH_LIMIT:
-        limit = len(businesses)
 
-    for i in range(limit):
-        results = {}
-        business_id = businesses[0]['id']
-        business_id1 = businesses[1]['id']
-        business_id2 = businesses[2]['id']
-        print(businesses)
+        if not businesses:
+            print(u'No businesses for {0}'.format(term))
+            return results
+
+        # find the minimum search limit
+        limit = SEARCH_LIMIT
+        if len(businesses) < SEARCH_LIMIT:
+            limit = len(businesses)
 
         print(u'{0} businesses found, querying business info ' \
-            'for the top 3 results "" ...'.format(
-                len(businesses), business_id))
-        response = get_business(API_KEY, business_id)
-        print(response['name'])
+            'for the top {1} results "" ...'.format(
+                len(businesses), limit))
+        # Find either the SEARCH_LIMIT number of places or the length of businesses found
+        for i in range(limit):
+            business = businesses[i]
+            if validateBusiness(business):
+                newPlace = buildPlace(term, business)
+                businessList.append(newPlace.__dict__)
+        results[term] = businessList
 
-        results['name1'] =  response['name']
-
-        response = get_business(API_KEY, business_id1)
-        print(response['name'])
-
-        results['name2'] =  response['name']
-
-        response = get_business(API_KEY, business_id2)
-        print(response['name'])
-
-        results['name3'] =  response['name']
-
-        print()
-        json_string = json.dumps(results)
-        print(json_string)
+    print("got results: ", results)
     return results
 
 def main():

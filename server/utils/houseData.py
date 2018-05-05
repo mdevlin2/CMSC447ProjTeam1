@@ -1,4 +1,4 @@
-from models.location import HouseCharacteristics, House, Type
+from models.location import HouseCharacteristics, House
 import random as r
 NUM_OF_PROPERTIES = 15
 NUM_OF_CLUSTERS = 8

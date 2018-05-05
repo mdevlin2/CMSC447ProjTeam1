@@ -38,15 +38,35 @@ def makeResponse(data, err):
     resp.err = err
     return jsonify(resp.__dict__)
 
+def validateAmmenitiesRoute(args):
+    if (not "lat" in args) and (not "long" in args):
+        return False
+    if "terms" not in args:
+        return False
+
+    if "radius" not in args:
+        return False
+
+    return True
+
+
 # Params: { "lat": int, "long": int, "radius": int }
 @app.route('/ammenities', methods=['GET'])
 def getAmmenitiesRoute():
     print("Getting ammenities")
-    lat, long = getLatLong(request.args)
-    print(request.args)
-    data = yelp.query_api(None, lat, long, radius)
-    print(data)
+    req = request.args
+
+    if not validateAmmenitiesRoute(req):
+        print("Invalid args: ", req)
+        return jsonify({"data": "invalid args", "err": 1})
+
+    terms = req['terms'].split(',')
+    print(terms)
+    radius = int(req['radius'])
+    lat, long = getLatLong(req)
+    data = yelp.getAmmenities(terms, lat, long, radius)
     resp = {"data": data, "err": 0}
+    # print(resp)
     return jsonify(resp)
 
 

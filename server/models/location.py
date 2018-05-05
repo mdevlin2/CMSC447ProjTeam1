@@ -1,12 +1,6 @@
 from enum import Enum
 import json
 
-# This can hold the different types of places
-class Type(Enum):
-    UNDEFINED = 0
-    AGENCY = 1
-    GYM = 2
-
 # characterizing a house
 class HouseCharacteristics:
     def __init__(self, price, bedrooms, bathrooms):
@@ -31,9 +25,12 @@ class Place:
         self.name = name
         self.lat = lat
         self.long = long
-        self.type = Type.UNDEFINED
+        self.type = type
+        self.phone = "N/A"
+        self.title = "N/A"
     def __str__(self):
         return "{ name: " + self.name + " lat: " + self.lat + " long: " + self.long + " type: " + str(self.type) + " }"
+
 
 # cities that are inside a location
 class City:
