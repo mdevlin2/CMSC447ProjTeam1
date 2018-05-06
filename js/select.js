@@ -82,6 +82,9 @@ window.onload = function () {
 	var countySel = document.getElementById("countySel");
 	var submitBut = document.getElementById("searchButton");
 	var icon = document.getElementById("loadingIcon")
+	var state = document.getElementById("state");
+	var county = document.getElementById("county");
+	var city = document.getElementById("city");
 
 	//Load States
 	for (var state in stateInfo) {
@@ -90,6 +93,7 @@ window.onload = function () {
 
 	// display correct counties
 	stateSel.onchange = function () {
+		localStorage.setItem('state', stateSel.value);
 		changedState()
 
 		// Ignore the default selection
@@ -105,6 +109,7 @@ window.onload = function () {
 
 	// display correct cities
 	countySel.onchange = function () {
+		localStorage.setItem('county', countySel.value);
 		changedCounties()
 
 		// Ignore the default selection
@@ -133,6 +138,7 @@ window.onload = function () {
 	}
 
 	citySel.onchange = function() {
+		localStorage.setItem('city', citySel.value);
 		if (this.selectedIndex < 1) { return; }
 		console.log(this.value)
 		var house = JSON.parse(this.value)

@@ -61,7 +61,7 @@ function newAmmenityMarkers(ammenities, terms){
   }
 }
 
-function createHouseEntry(house){
+function createHouseEntry(house, state, county, city){
   var item = document.createElement("tr")
   var address = document.createElement("td")
   var addressButton = document.createElement("button")
@@ -80,6 +80,9 @@ function createHouseEntry(house){
   saveButton.style.class = "saveButton"
   saveButton.onclick = function(){
     var arrJson = localStorage.getItem("savedHouses")
+    var posInfo = localStorage.getItem("posInfo")
+    var SCCInfo = "{" + state + ", " + county + ", " + city + "}"
+
     if (arrJson == null){
       arrJson = '[]'
     }
@@ -87,7 +90,16 @@ function createHouseEntry(house){
     houseArr.push(house)
     var saveInfo = JSON.stringify(houseArr)
     console.log(saveInfo)
+
+    if (posInfo == null) {
+      posInfo = '[]'
+    }
+    var posArr = JSON.parse(posInfo)
+    posArr.push(SCCInfo)
+    var savePosInfo = JSON.stringify(posArr)
+
     localStorage.setItem("savedHouses", saveInfo)
+    localStorage.setItem("posInfo", savePosInfo)
   }
 
   address.appendChild(addressButton)
@@ -106,17 +118,17 @@ function createHouseEntry(house){
   return item
 }
 
-function updateResults(houses){
+function updateResults(houses, state, county, city){
   console.log("updating results")
   var list = document.getElementById("resultList")
   for (index in houses){
     house = houses[index]
-    var entry = createHouseEntry(house)
+    var entry = createHouseEntry(house, state, county, city)
     list.appendChild(entry)
   }
 }
 // get properties will make an http to the server to get a list of properties
-function getProperties(lat, long){
+function getProperties(lat, long, state, county, city){
   var url = getPropertyRoute(lat, long)
   var req = new XMLHttpRequest()
   console.log("getting from" + url)
@@ -144,7 +156,7 @@ function getProperties(lat, long){
       newPropertyMarker(houses)
 
       // Updates the result table
-      updateResults(houses)
+      updateResults(houses, state, county, city)
 
     }
   }
@@ -208,9 +220,13 @@ window.onload = function(){
   var selectLat = parseFloat(localStorage.getItem("selectedLat"))
   var selectLong = parseFloat(localStorage.getItem("selectedLong"))
 
+  var selectState = localStorage.getItem("state");
+  var selectCounty = localStorage.getItem("county");
+  var selectCity = localStorage.getItem("city");
+
   var place = L.latLng(selectLat, selectLong)
   mymap.setView(place, 30)
-  getProperties(selectLat, selectLong)
+  getProperties(selectLat, selectLong, selectState, selectCounty, selectCity)
 
   updateButton.onclick = function(){
     console.log(loading)

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Coastal Home Search</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="pageTitle">
+            Coastal Home Search:<br>
+            Home Page
+        </div>
+    <div id="header">
+    <div id="nav">
+        <ul>
+            <li><a href="http://localhost:8000/index.html">Home</a></li>
+            <li><a href="http://localhost:8000/map.html">Map</a></li>
+            <li><a href="http://localhost:8000/favorites.html">Favorites</a></li>
+        </ul>
+    </div>
+    </div>
+    <table>
+        <tr>
+            <th>
+            <h3>Filter State:</h3>
+            </th>
+
+            <th>
+            <form onchange="return filterFavs()">
+                <select id="filterState">
+                    <option value="ALL">Select State</option>
+                    <option value="MD">Maryland</option> 
+                    <option value="DE">Delaware</option>
+                </select>
+            </form>
+            </th>
+        </tr>
+    </table>
+    <br>
+    <table border="1" width="80%" id="favTable">
+    <tr>
+        <th>Listings</th>
+        <th>Agencies</th>
+        <th></th>
+    </tr>
+    </table>
+    </div>
+    <script src="js/search.js"></script>
+    <script src="js/fav.js"></script>
+    <script>
+        window.onload = function() {
+            return addFavs();
+        };
+    </script>
+</body>
+</html>
