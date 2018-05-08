@@ -1,0 +1,605 @@
+state,name,county,population,populationDensity
+Maryland,Aberdeen,Harford,14959,2201.4
+Maryland,Aberdeen Proving Ground,Harford,2093,188.5
+Maryland,Accident,Garrett,325,662.6
+Maryland,Accokeek,Prince George's,10573,385.5
+Maryland,Adamstown,Frederick,2372,721.3
+Maryland,Adelphi,Prince George's,15086,5508.2
+Maryland,Algonquin,Dorchester,1241,1673.3
+Maryland,Allen,Wicomico,210,596.8
+Maryland,Andrews AFB,Prince George's,2973,429.7
+Maryland,Annapolis,Anne Arundel,38394,5344.1
+Maryland,Annapolis Neck,Anne Arundel,10950,1576.4
+Maryland,Antietam,Washington,89,580
+Maryland,Aquasco,Prince George's,981,49.6
+Maryland,Arbutus,Baltimore,20483,3139.9
+Maryland,Arden on the Severn,Anne Arundel,1953,1367.1
+Maryland,Arnold,Anne Arundel,23106,2135.9
+Maryland,Ashton-Sandy Spring,Montgomery,5628,548
+Maryland,Aspen Hill,Montgomery,48759,5070.4
+Maryland,Baden,Prince George's,2128,76.9
+Maryland,Bagtown,Washington,333,610.3
+Maryland,Bakersville,Washington,30,590.4
+Maryland,Ballenger Creek,Frederick,18274,1689.2
+Maryland,Baltimore,Baltimore,620961,7671.5
+Maryland,Baltimore Highlands,Baltimore,7019,4056.5
+Maryland,Barclay,Queen Anne's,120,769
+Maryland,Barnesville,Montgomery,172,351.8
+Maryland,Barrelville,Allegany,73,1662.2
+Maryland,Barton,Allegany,457,2068.5
+Maryland,Bartonsville,Frederick,1451,555.6
+Maryland,Beaver Creek,Washington,251,385
+Maryland,Bel Air,Allegany,1258,2763.7
+Maryland,Bel Air,Harford,10120,3450.4
+Maryland,Bel Air North,Harford,30568,1903.5
+Maryland,Bel Air South,Harford,47709,3045.3
+Maryland,Beltsville,Prince George's,16772,2342
+Maryland,Benedict,Charles,261,1117.8
+Maryland,Bensville,Charles,11923,705.7
+Maryland,Berlin,Worcester,4485,1422.2
+Maryland,Berwyn Heights,Prince George's,3123,4535.4
+Maryland,Bethesda,Montgomery,60858,4579.7
+Maryland,Betterton,Kent,345,348.5
+Maryland,Bier,Allegany,173,118.7
+Maryland,Big Pool,Washington,82,768.1
+Maryland,Big Spring,Washington,84,604.2
+Maryland,Bishopville,Worcester,531,185
+Maryland,Bivalve,Wicomico,201,153.2
+Maryland,Bladensburg,Prince George's,9148,9163
+Maryland,Bloomington,Garrett,305,491.8
+Maryland,Boonsboro,Washington,3336,1150.8
+Maryland,Bowie,Prince George's,54727,2970.1
+Maryland,Bowleys Quarters,Baltimore,6755,2147.6
+Maryland,Bowling Green,Allegany,1077,1119.6
+Maryland,Bowmans Addition,Allegany,627,638
+Maryland,Braddock Heights,Frederick,2608,555.8
+Maryland,Brandywine,Prince George's,6719,319.8
+Maryland,Breathedsville,Washington,254,682.6
+Maryland,Brentwood,Prince George's,3046,7946.7
+Maryland,Brock Hall,Prince George's,9552,701.7
+Maryland,Brookeville,Montgomery,134,1136.2
+Maryland,Brooklyn Park,Anne Arundel,14373,3422.5
+Maryland,Brookmont,Montgomery,3468,2688
+Maryland,Brookview,Dorchester,60,1384.8
+Maryland,Broomes Island,Calvert,405,557.2
+Maryland,Brownsville,Washington,89,314.5
+Maryland,Brunswick,Frederick,5870,1798
+Maryland,Bryans Road,Charles,7244,470.9
+Maryland,Bryantown,Charles,655,158.1
+Maryland,Buckeystown,Frederick,1019,666.3
+Maryland,Burkittsville,Frederick,151,332.6
+Maryland,Burtonsville,Montgomery,8323,1063.7
+Maryland,Butlertown,Kent,505,588.4
+Maryland,Cabin John,Montgomery,2280,1907.3
+Maryland,California,St. Mary's,11857,928.1
+Maryland,Calvert Beach,Calvert,808,980.9
+Maryland,Calverton,Montgomery,17724,3853.5
+Maryland,Calverton,Prince George's,17724,3853.5
+Maryland,Cambridge,Dorchester,12326,1192
+Maryland,Camp Springs,Prince George's,19096,2483.1
+Maryland,Cape St. Claire,Anne Arundel,8747,4366.6
+Maryland,Capitol Heights,Prince George's,4337,5424.5
+Maryland,Carlos,Allegany,153,533.6
+Maryland,Carney,Baltimore,29941,4294.4
+Maryland,Catonsville,Baltimore,41567,2977.2
+Maryland,Cavetown,Washington,1473,774.1
+Maryland,Cearfoss,Washington,178,885
+Maryland,Cecilton,Cecil,663,1435.5
+Maryland,Cedarville,Prince George's,717,54
+Maryland,Centreville,Queen Anne's,4285,1746.5
+Maryland,Chance,Somerset,353,211.4
+Maryland,Charlestown,Cecil,1183,992.7
+Maryland,Charlotte Hall,St. Mary's,1420,280.3
+Maryland,Charlton,Washington,171,1046.1
+Maryland,Chesapeake Beach,Calvert,5753,2121.5
+Maryland,Chesapeake City,Cecil,673,1340.4
+Maryland,Chesapeake Ranch Estates,Calvert,10519,2434.9
+Maryland,Chester,Queen Anne's,4167,818.4
+Maryland,Chestertown,Kent,5252,2023.6
+Maryland,Cheverly,Prince George's,6173,4560.8
+Maryland,Chevy Chase,Montgomery,2824,6014.7
+Maryland,Chevy Chase,Montgomery,9545,3986.6
+Maryland,Chevy Chase Section Five,Montgomery,658,6418.6
+Maryland,Chevy Chase Section Three,Montgomery,760,6461.9
+Maryland,Chevy Chase View,Montgomery,920,3336.5
+Maryland,Chevy Chase Village,Montgomery,1953,4680.2
+Maryland,Chewsville,Washington,238,285
+Maryland,Chillum,Prince George's,33513,9819.3
+Maryland,Choptank,Caroline,129,542.1
+Maryland,Church Creek,Dorchester,125,370.4
+Maryland,Church Hill,Queen Anne's,745,1045
+Maryland,Clarksburg,Montgomery,13766,1677.3
+Maryland,Clarysville,Allegany,73,624.4
+Maryland,Clear Spring,Washington,358,3186
+Maryland,Clinton,Prince George's,35970,1438.9
+Maryland,Cloverly,Montgomery,15126,1505.2
+Maryland,Cobb Island,Charles,1166,1916.3
+Maryland,Cockeysville,Baltimore,20776,1824.6
+Maryland,Colesville,Montgomery,14647,2911.3
+Maryland,College Park,Prince George's,30413,5396
+Maryland,Colmar Manor,Prince George's,1404,2993.8
+Maryland,Columbia,Howard,99615,3120.1
+Maryland,Coral Hills,Prince George's,9895,6591
+Maryland,Cordova,Talbot,562,115.4
+Maryland,Corriganville,Allegany,455,1152.1
+Maryland,Cottage City,Prince George's,1305,5246
+Maryland,Crellin,Garrett,264,376.1
+Maryland,Cresaptown,Allegany,4592,750.9
+Maryland,Crisfield,Somerset,2726,1679.7
+Maryland,Crofton,Anne Arundel,27348,4135.2
+Maryland,Croom,Prince George's,2631,76.9
+Maryland,Crownsville,Anne Arundel,1757,345.7
+Maryland,Cumberland,Allegany,20859,2068.7
+Maryland,Damascus,Montgomery,15257,1320
+Maryland,Dames Quarter,Somerset,167,14.1
+Maryland,Danville,Allegany,271,237.8
+Maryland,Dargan,Washington,165,558.9
+Maryland,Darlington,Harford,409,389.7
+Maryland,Darnestown,Montgomery,6802,415
+Maryland,Dawson,Allegany,103,198.5
+Maryland,Deale,Anne Arundel,4945,935.6
+Maryland,Deal Island,Somerset,471,155.4
+Maryland,Deer Park,Garrett,399,399.4
+Maryland,Delmar,Wicomico,3003,1746
+Maryland,Denton,Caroline,4418,836.8
+Maryland,Derwood,Montgomery,2381,3809.1
+Maryland,Detmold,Allegany,71,453.8
+Maryland,District Heights,Prince George's,5837,6298.5
+Maryland,Downsville,Washington,355,568.2
+Maryland,Drum Point,Calvert,2731,1640.9
+Maryland,Dundalk,Baltimore,63597,4866.8
+Maryland,Dunkirk,Calvert,2520,382.6
+Maryland,Eagle Harbor,Prince George's,63,538.6
+Maryland,Eakles Mill,Washington,27,318
+Maryland,East New Market,Dorchester,400,1001.8
+Maryland,Easton,Talbot,15945,1510
+Maryland,East Riverdale,Prince George's,15509,9582.4
+Maryland,Eckhart Mines,Allegany,932,607.1
+Maryland,Eden,Somerset,823,147.7
+Maryland,Edesville,Kent,169,422.9
+Maryland,Edgemere,Baltimore,8669,799.9
+Maryland,Edgemont,Washington,231,435.5
+Maryland,Edgewater,Anne Arundel,9023,3015.7
+Maryland,Edgewood,Harford,25562,1437.4
+Maryland,Edmonston,Prince George's,1445,3697.6
+Maryland,Eldersburg,Carroll,30531,769.2
+Maryland,Eldorado,Dorchester,59,769.7
+Maryland,Elkridge,Howard,15593,1859
+Maryland,Elkton,Cecil,15443,1848.9
+Maryland,Ellerslie,Allegany,572,1504.7
+Maryland,Ellicott City,Howard,65834,2197.7
+Maryland,Elliott,Dorchester,52,148.2
+Maryland,Emmitsburg,Frederick,2814,1856.1
+Maryland,Ernstville,Washington,56,374.8
+Maryland,Essex,Baltimore,39262,4240.9
+Maryland,Fairland,Montgomery,23681,4812.3
+Maryland,Fairlee,Kent,490,129.1
+Maryland,Fairmount,Somerset,457,37.3
+Maryland,Fairmount Heights,Prince George's,1494,5554.8
+Maryland,Fairplay,Washington,580,481.6
+Maryland,Fairview,Washington,76,360.7
+Maryland,Fairwood,Prince George's,5031,1351.4
+Maryland,Fallston,Harford,8958,640.7
+Maryland,Federalsburg,Caroline,2739,1418.6
+Maryland,Ferndale,Anne Arundel,16746,4212.3
+Maryland,Finzel,Garrett,547,166.2
+Maryland,Fishing Creek,Dorchester,163,155.1
+Maryland,Flintstone,Allegany,177,425.6
+Maryland,Forest Glen,Montgomery,6582,6386.4
+Maryland,Forest Heights,Prince George's,2447,5072.5
+Maryland,Forestville,Prince George's,12353,3151.2
+Maryland,Fort Meade,Anne Arundel,9327,1152.1
+Maryland,Fort Ritchie,Washington,314,320.3
+Maryland,Fort Washington,Prince George's,23717,1719.8
+Maryland,Fountainhead-Orchard Hills,Washington,5666,1283.7
+Maryland,Four Corners,Montgomery,7945,5455.3
+Maryland,Franklin,Allegany,290,894.1
+Maryland,Frederick,Frederick,65239,2966.7
+Maryland,Frenchtown-Rumbly,Somerset,100,26.6
+Maryland,Friendly,Prince George's,9250,1897.2
+Maryland,Friendship,Anne Arundel,447,249.2
+Maryland,Friendship Heights Village,Montgomery,4698,79555.4
+Maryland,Friendsville,Garrett,491,539.4
+Maryland,Frostburg,Allegany,9002,2635.7
+Maryland,Fruitland,Wicomico,4866,1286.2
+Maryland,Fulton,Howard,2049,541.2
+Maryland,Funkstown,Washington,904,2493.5
+Maryland,Gaithersburg,Montgomery,59933,5875.2
+Maryland,Galena,Kent,612,1697.1
+Maryland,Galestown,Dorchester,138,588.1
+Maryland,Galesville,Anne Arundel,684,527.3
+Maryland,Gambrills,Anne Arundel,2800,368.4
+Maryland,Gapland,Washington,109,487.6
+Maryland,Garrett Park,Montgomery,992,3881.2
+Maryland,Garretts Mill,Washington,234,410.2
+Maryland,Garrison,Baltimore,8823,2795.6
+Maryland,Georgetown,Kent,143,97.3
+Maryland,Germantown,Montgomery,86395,5083.2
+Maryland,Gilmore,Allegany,127,1316.5
+Maryland,Girdletree,Worcester,149,224.9
+Maryland,Glassmanor,Prince George's,17295,7357
+Maryland,Glenarden,Prince George's,6000,4916.4
+Maryland,Glen Burnie,Anne Arundel,67639,3904.8
+Maryland,Glen Echo,Montgomery,255,2459.5
+Maryland,Glenmont,Montgomery,13529,4836
+Maryland,Glenn Dale,Prince George's,13466,1891.2
+Maryland,Golden Beach,St. Mary's,3796,1003.3
+Maryland,Goldsboro,Caroline,246,332.4
+Maryland,Gorman,Garrett,106,84.5
+Maryland,Grahamtown,Allegany,364,2518.2
+Maryland,Grantsville,Garrett,766,782.7
+Maryland,Grasonville,Queen Anne's,3425,619.9
+Maryland,Greenbelt,Prince George's,23068,3674.4
+Maryland,Greensboro,Caroline,1931,1837.1
+Maryland,Greensburg,Washington,229,565
+Maryland,Hagerstown,Washington,39662,3365
+Maryland,Halfway,Washington,10701,2297.6
+Maryland,Hampstead,Carroll,6323,1982.8
+Maryland,Hampton,Baltimore,5052,882.6
+Maryland,Hancock,Washington,1545,566.2
+Maryland,Havre de Grace,Harford,12952,2355.9
+Maryland,Hebron,Wicomico,1084,849.6
+Maryland,Henderson,Caroline,146,1156.1
+Maryland,Herald Harbor,Anne Arundel,2603,1546.6
+Maryland,Highfield-Cascade,Washington,1112,642
+Maryland,Highland,Howard,1034,429.7
+Maryland,Highland Beach,Anne Arundel,96,1507
+Maryland,Hillandale,Montgomery,6043,2932.9
+Maryland,Hillandale,Prince George's,6043,2932.9
+Maryland,Hillcrest Heights,Prince George's,16469,6621.1
+Maryland,Hillsboro,Caroline,161,1072.8
+Maryland,Hughesville,Charles,2197,197
+Maryland,Huntingtown,Calvert,3311,410.2
+Maryland,Hurlock,Dorchester,2092,785.8
+Maryland,Hutton,Garrett,86,510.2
+Maryland,Hyattsville,Prince George's,17557,6588
+Maryland,Ilchester,Howard,23476,2184.7
+Maryland,Indian Head,Charles,3844,3123.2
+Maryland,Indian Springs,Washington,64,549.9
+Maryland,Jarrettsville,Harford,2916,337.6
+Maryland,Jefferson,Frederick,2111,1006.2
+Maryland,Jennings,Garrett,113,338.1
+Maryland,Jessup,Anne Arundel,7137,1358.4
+Maryland,Jessup,Howard,7137,1358.4
+Maryland,Jesterville,Wicomico,188,118.6
+Maryland,Joppatowne,Harford,12616,1874.8
+Maryland,Jugtown,Washington,204,611.2
+Maryland,Keedysville,Washington,1152,1257.3
+Maryland,Kemp Mill,Montgomery,12564,4952.1
+Maryland,Kemps Mill,Washington,126,488.6
+Maryland,Kennedyville,Kent,199,356.3
+Maryland,Kensington,Montgomery,2213,4649.5
+Maryland,Kent Narrows,Queen Anne's,567,572.8
+Maryland,Kettering,Prince George's,12790,2327.2
+Maryland,Kingstown,Queen Anne's,1733,764.9
+Maryland,Kingsville,Baltimore,4318,430.1
+Maryland,Kitzmiller,Garrett,321,1443.3
+Maryland,Klondike,Allegany,118,309.4
+Maryland,Konterra,Prince George's,2527,399.8
+Maryland,Lake Arbor,Prince George's,9776,3251.1
+Maryland,Lake Shore,Anne Arundel,19477,1448.1
+Maryland,Landover,Prince George's,23078,5672.5
+Maryland,Landover Hills,Prince George's,1687,5666.2
+Maryland,Langley Park,Prince George's,18755,18864
+Maryland,Lanham,Prince George's,10157,2879.1
+Maryland,Lansdowne,Baltimore,8409,3694.5
+Maryland,La Plata,Charles,8753,1183.6
+Maryland,Largo,Prince George's,10709,3498.1
+Maryland,Laurel,Prince George's,25115,5838.7
+Maryland,La Vale,Allegany,3551,1332.1
+Maryland,Layhill,Montgomery,5169,3287.7
+Maryland,Laytonsville,Montgomery,353,339.3
+Maryland,Leisure World,Montgomery,8749,8000.7
+Maryland,Leitersburg,Washington,573,325.9
+Maryland,Leonardtown,St. Mary's,2930,920.9
+Maryland,Lexington Park,St. Mary's,11626,2068.3
+Maryland,Libertytown,Frederick,950,394.2
+Maryland,Linganore,Frederick,8543,1488
+Maryland,Linthicum,Anne Arundel,10324,1891.2
+Maryland,Little Orleans,Allegany,42,59.7
+Maryland,Lochearn,Baltimore,25333,4529.6
+Maryland,Loch Lynn Heights,Garrett,552,1735.5
+Maryland,Lonaconing,Allegany,1214,2930.3
+Maryland,Long Beach,Calvert,1821,1090.3
+Maryland,Luke,Allegany,65,244
+Maryland,Lusby,Calvert,1835,522.3
+Maryland,Lutherville,Baltimore,6504,3078.2
+Maryland,McCoole,Allegany,511,363.8
+Maryland,Madison,Dorchester,204,63.7
+Maryland,Manchester,Carroll,4808,2055.7
+Maryland,Mapleville,Washington,238,589.9
+Maryland,Mardela Springs,Wicomico,347,880.1
+Maryland,Marlboro Meadows,Prince George's,3672,602.9
+Maryland,Marlboro Village,Prince George's,9438,2446.2
+Maryland,Marlow Heights,Prince George's,5618,2762.3
+Maryland,Marlton,Prince George's,9031,1521.6
+Maryland,Martin's Additions,Montgomery,933,6749.8
+Maryland,Marydel,Caroline,141,1774.1
+Maryland,Maryland City,Anne Arundel,16093,2080.4
+Maryland,Maugansville,Washington,3071,1253.7
+Maryland,Mayo,Anne Arundel,8298,1476.2
+Maryland,Mays Chapel,Baltimore,11420,3079.3
+Maryland,Mechanicsville,St. Mary's,1508,289.2
+Maryland,Melwood,Prince George's,3051,1081.7
+Maryland,Mercersville,Washington,130,402.8
+Maryland,Middleburg,Washington,70,718.7
+Maryland,Middle River,Baltimore,25191,3239.2
+Maryland,Middletown,Frederick,4136,2383.3
+Maryland,Midland,Allegany,446,2306.5
+Maryland,Midlothian,Allegany,320,516.1
+Maryland,Milford Mill,Baltimore,29042,4182.9
+Maryland,Millington,Kent,642,966
+Maryland,Millington,Queen Anne's,642,966
+Maryland,Mitchellville,Prince George's,10967,2170.8
+Maryland,Monrovia,Frederick,416,185.9
+Maryland,Montgomery Village,Montgomery,32032,8017.7
+Maryland,Morningside,Prince George's,2015,3592.1
+Maryland,Moscow,Allegany,240,1478.2
+Maryland,Mount Aetna,Washington,561,397.1
+Maryland,Mountain Lake Park,Garrett,2092,1080.2
+Maryland,Mount Airy,Carroll,9288,2255.3
+Maryland,Mount Airy,Frederick,9288,2255.3
+Maryland,Mount Briar,Washington,160,256.9
+Maryland,Mount Lena,Washington,515,411
+Maryland,Mount Rainier,Prince George's,8080,12443.3
+Maryland,Mount Savage,Allegany,873,947.9
+Maryland,Mount Vernon,Somerset,779,59.8
+Maryland,Myersville,Frederick,1626,1592.5
+Maryland,Nanticoke,Wicomico,225,86.9
+Maryland,Nanticoke Acres,Wicomico,103,389.3
+Maryland,National,Allegany,56,357.3
+Maryland,National Harbor,Prince George's,3788,2616.5
+Maryland,Naval Academy,Anne Arundel,4802,8801
+Maryland,Newark,Worcester,336,35.3
+Maryland,New Carrollton,Prince George's,12135,7937.5
+Maryland,New Market,Frederick,656,822.4
+Maryland,New Windsor,Carroll,1396,1879.5
+Maryland,Nikep,Allegany,116,770.9
+Maryland,North Beach,Calvert,1978,5983.9
+Maryland,North Bethesda,Montgomery,43828,4953
+Maryland,North Brentwood,Prince George's,517,5009.1
+Maryland,North Chevy Chase,Montgomery,519,4654.1
+Maryland,North East,Cecil,3572,1737.8
+Maryland,North Kensington,Montgomery,9514,6228.4
+Maryland,North Laurel,Howard,4474,3629.3
+Maryland,North Potomac,Montgomery,24410,3744.4
+Maryland,Oakland,Garrett,1925,742.9
+Maryland,Ocean,Allegany,32,726.7
+Maryland,Ocean City,Worcester,7102,1609.8
+Maryland,Ocean Pines,Worcester,11710,1758.4
+Maryland,Odenton,Anne Arundel,37132,2513.1
+Maryland,Oldtown,Allegany,86,643.8
+Maryland,Olney,Montgomery,33844,2090
+Maryland,Overlea,Baltimore,12275,4087.1
+Maryland,Owings,Calvert,2149,545.5
+Maryland,Owings Mills,Baltimore,30622,3210.5
+Maryland,Oxford,Talbot,651,1208.9
+Maryland,Oxon Hill,Prince George's,17722,2677.7
+Maryland,Paramount-Long Meadow,Washington,2571,1177.6
+Maryland,Parkville,Baltimore,30734,7162.4
+Maryland,Parole,Anne Arundel,15922,1550.1
+Maryland,Parsonsburg,Wicomico,339,259.7
+Maryland,Pasadena,Anne Arundel,24287,1626
+Maryland,Pecktonville,Washington,167,283.7
+Maryland,Peppermill Village,Prince George's,4895,6531.2
+Maryland,Perry Hall,Baltimore,28474,4083.3
+Maryland,Perryman,Harford,2342,423.8
+Maryland,Perryville,Cecil,4361,1429.8
+Maryland,Pikesville,Baltimore,30764,2490.7
+Maryland,Pinesburg,Washington,449,613
+Maryland,Piney Point,St. Mary's,864,565.4
+Maryland,Pittsville,Wicomico,1417,843.2
+Maryland,Pleasant Grove,Allegany,353,223.4
+Maryland,Pleasant Hills,Harford,3379,775.1
+Maryland,Pocomoke City,Worcester,4184,1134.2
+Maryland,Point of Rocks,Frederick,1466,1331
+Maryland,Pomfret,Charles,517,188.7
+Maryland,Pondsville,Washington,158,512.1
+Maryland,Poolesville,Montgomery,4883,1242.2
+Maryland,Port Deposit,Cecil,653,288.2
+Maryland,Port Tobacco Village,Charles,13,83.2
+Maryland,Potomac,Montgomery,44965,1790.5
+Maryland,Potomac Heights,Charles,1117,1040.8
+Maryland,Potomac Park,Allegany,2530,6559.9
+Maryland,Powellville,Wicomico,189,127.6
+Maryland,Preston,Caroline,719,1261.8
+Maryland,Prince Frederick,Calvert,2538,693
+Maryland,Princess Anne,Somerset,3290,1973.1
+Maryland,Pylesville,Harford,693,146.1
+Maryland,Quantico,Wicomico,133,70.4
+Maryland,Queen Anne,Prince George's,1280,146.9
+Maryland,Queen Anne,Queen Anne's,222,1678.6
+Maryland,Queen Anne,Talbot,222,1678.6
+Maryland,Queenland,Prince George's,1929,397.2
+Maryland,Queenstown,Queen Anne's,664,457
+Maryland,Randallstown,Baltimore,32430,3174.3
+Maryland,Rawlings,Allegany,693,776
+Maryland,Redland,Montgomery,17242,2442
+Maryland,Reid,Washington,54,431.5
+Maryland,Reisterstown,Baltimore,25968,5029.1
+Maryland,Ridgely,Caroline,1639,920.8
+Maryland,Ringgold,Washington,166,575.5
+Maryland,Rising Sun,Cecil,2781,2209.5
+Maryland,Riva,Anne Arundel,4076,1659.5
+Maryland,Riverdale Park,Prince George's,6956,4218.4
+Maryland,Riverside,Harford,6425,2754.3
+Maryland,Riviera Beach,Anne Arundel,12677,4813.7
+Maryland,Robinwood,Washington,6918,1792.6
+Maryland,Rock Hall,Kent,1310,978.9
+Maryland,Rock Point,Charles,107,170.1
+Maryland,Rockville,Montgomery,61209,4531.7
+Maryland,Rohrersville,Washington,175,501.6
+Maryland,Rosaryville,Prince George's,10697,1164.8
+Maryland,Rosedale,Baltimore,19257,2792.6
+Maryland,Rosemont,Frederick,294,528.6
+Maryland,Rossville,Baltimore,15147,2822.2
+Maryland,Sabillasville,Frederick,354,236.4
+Maryland,St. George Island,St. Mary's,257,382.1
+Maryland,St. James,Washington,2953,488.6
+Maryland,St. Leonard,Calvert,742,325.5
+Maryland,St. Michaels,Talbot,1029,895.7
+Maryland,Salisbury,Wicomico,30343,2265.2
+Maryland,Sandy Hook,Washington,188,871.9
+Maryland,San Mar,Washington,384,849.7
+Maryland,Savage,Howard,7054,2578.1
+Maryland,Scaggsville,Howard,24333,2365.5
+Maryland,Seabrook,Prince George's,17287,5722.9
+Maryland,Seat Pleasant,Prince George's,4542,6224.5
+Maryland,Secretary,Dorchester,535,2043.7
+Maryland,Severn,Anne Arundel,44231,2497
+Maryland,Severna Park,Anne Arundel,37634,2282.7
+Maryland,Shady Side,Anne Arundel,5803,858.3
+Maryland,Shaft,Allegany,235,298.8
+Maryland,Sharpsburg,Washington,705,3012.1
+Maryland,Sharptown,Wicomico,651,1578.2
+Maryland,Silver Hill,Prince George's,5950,4440.1
+Maryland,Silver Spring,Montgomery,71452,9023
+Maryland,Smith Island,Somerset,276,63.5
+Maryland,Smithsburg,Washington,2975,2831
+Maryland,Snow Hill,Worcester,2103,698.9
+Maryland,Solomons,Calvert,2368,1189.6
+Maryland,Somerset,Montgomery,1216,4427.1
+Maryland,South Kensington,Montgomery,8462,4063.6
+Maryland,South Laurel,Prince George's,26112,3204.8
+Maryland,Spencerville,Montgomery,1594,1023.7
+Maryland,Springdale,Prince George's,2994,3704.1
+Maryland,Spring Gap,Allegany,55,85
+Maryland,Spring Ridge,Frederick,5795,2198
+Maryland,Stevensville,Queen Anne's,6803,1057.1
+Maryland,Stockton,Worcester,92,54.1
+Maryland,Sudlersville,Queen Anne's,497,530.4
+Maryland,Suitland,Prince George's,25825,6073.7
+Maryland,Summerfield,Prince George's,10898,3002.3
+Maryland,Swanton,Garrett,58,151.3
+Maryland,Sykesville,Carroll,4436,2815.1
+Maryland,Takoma Park,Montgomery,16715,8027.5
+Maryland,Tall Timbers,St. Mary's,462,335.6
+Maryland,Taneytown,Carroll,6728,2217
+Maryland,Taylors Island,Dorchester,173,41.7
+Maryland,Temple Hills,Prince George's,7852,5577.8
+Maryland,Templeville,Caroline,138,1726.3
+Maryland,Templeville,Queen Anne's,138,1726.3
+Maryland,Thurmont,Frederick,6170,1975.8
+Maryland,Tilghman Island,Talbot,784,327.1
+Maryland,Tilghmanton,Washington,465,1002.4
+Maryland,Timonium,Baltimore,9925,1853.7
+Maryland,Tolchester,Kent,329,539.1
+Maryland,Towson,Baltimore,55197,3901.9
+Maryland,Trappe,Talbot,1077,388
+Maryland,Travilah,Montgomery,12159,768.2
+Maryland,Trego-Rohrersville Station,Washington,172,403.4
+Maryland,Tyaskin,Wicomico,236,181.6
+Maryland,Union Bridge,Carroll,975,938.1
+Maryland,University Park,Prince George's,2548,5096.9
+Maryland,Upper Marlboro,Prince George's,631,1563.5
+Maryland,Urbana,Frederick,9175,1398.8
+Maryland,Vale Summit,Allegany,139,142.5
+Maryland,Vienna,Dorchester,271,1458
+Maryland,Waldorf,Charles,67752,1870.6
+Maryland,Walker Mill,Prince George's,11302,3575
+Maryland,Walkersville,Frederick,5800,1333.2
+Maryland,Washington Grove,Montgomery,555,1580.4
+Maryland,Waterview,Wicomico,40,81.7
+Maryland,West Denton,Caroline,52,175.6
+Maryland,Westernport,Allegany,1888,2162.8
+Maryland,West Laurel,Prince George's,4230,1859.3
+Maryland,Westminster,Carroll,18590,2804.4
+Maryland,West Ocean City,Worcester,4375,1158.6
+Maryland,Westphalia,Prince George's,7266,547.5
+Maryland,West Pocomoke,Somerset,454,48.3
+Maryland,Whaleyville,Worcester,149,155.4
+Maryland,Wheaton,Montgomery,48284,6998.2
+Maryland,Whitehaven,Wicomico,43,116.7
+Maryland,White Marsh,Baltimore,9513,1792.2
+Maryland,White Oak,Montgomery,17403,4605.8
+Maryland,Willards,Wicomico,958,891.7
+Maryland,Williamsport,Washington,2137,2048.1
+Maryland,Williston,Caroline,155,590.2
+Maryland,Wilson-Conococheague,Washington,2282,483.1
+Maryland,Woodland,Allegany,113,621.3
+Maryland,Woodlawn,Baltimore,37879,3971.2
+Maryland,Woodlawn,Prince George's,6334,5452.1
+Maryland,Woodmore,Prince George's,3936,601.1
+Maryland,Woodsboro,Frederick,1141,1601.4
+Maryland,Worton,Kent,249,271.1
+Maryland,Yarrowsburg,Washington,133,585.5
+Maryland,Zihlman,Allegany,362,241.4
+Delaware,Arden,New Castle,439,1694.8
+Delaware,Ardencroft,New Castle,231,2285.2
+Delaware,Ardentown,New Castle,264,1629.6
+Delaware,Bear,New Castle,19371,3391.3
+Delaware,Bellefonte,New Castle,1193,6732.1
+Delaware,Bethany Beach,Sussex,1060,920.7
+Delaware,Bethel,Sussex,171,427.1
+Delaware,Blades,Sussex,1241,2233.8
+Delaware,Bowers,Kent,335,1166.4
+Delaware,Bridgeville,Sussex,2048,440.4
+Delaware,Brookside,New Castle,14353,3636.4
+Delaware,Camden,Kent,3464,936.1
+Delaware,Cheswold,Kent,1380,1072.8
+Delaware,Claymont,New Castle,8253,3838.4
+Delaware,Clayton,Kent,2918,1589.9
+Delaware,Clayton,New Castle,2918,1589.9
+Delaware,Dagsboro,Sussex,805,591
+Delaware,Delaware City,New Castle,1695,1377.8
+Delaware,Delmar,Sussex,1597,899.7
+Delaware,Dewey Beach,Sussex,341,1039.5
+Delaware,Dover,Kent,36047,1557.3
+Delaware,Dover Base Housing,Kent,3450,4994.1
+Delaware,Edgemoor,New Castle,5677,3041.6
+Delaware,Ellendale,Sussex,381,861.8
+Delaware,Elsmere,New Castle,6131,6091.6
+Delaware,Farmington,Kent,110,1350.1
+Delaware,Felton,Kent,1298,1583.4
+Delaware,Fenwick Island,Sussex,379,1148.4
+Delaware,Frankford,Sussex,847,1161.5
+Delaware,Frederica,Kent,774,402.7
+Delaware,Georgetown,Sussex,6422,1273.5
+Delaware,Glasgow,New Castle,14303,1441.1
+Delaware,Greenville,New Castle,2326,847.8
+Delaware,Greenwood,Sussex,973,1345.2
+Delaware,Harrington,Kent,3562,1296.5
+Delaware,Hartly,Kent,74,1252.6
+Delaware,Henlopen Acres,Sussex,122,477.8
+Delaware,Highland Acres,Kent,3459,2307.4
+Delaware,Hockessin,New Castle,13527,1347.2
+Delaware,Houston,Kent,374,1116.8
+Delaware,Kent Acres,Kent,1890,2238.8
+Delaware,Kenton,Kent,261,1387.5
+Delaware,Laurel,Sussex,3708,1284.6
+Delaware,Leipsic,Kent,183,626.8
+Delaware,Lewes,Sussex,2747,722.3
+Delaware,Little Creek,Kent,224,1613.9
+Delaware,Long Neck,Sussex,1980,766
+Delaware,Magnolia,Kent,225,1890
+Delaware,Middletown,New Castle,18871,1625.6
+Delaware,Milford,Kent,9559,1011.3
+Delaware,Milford,Sussex,9559,1011.3
+Delaware,Millsboro,Sussex,3877,1043.7
+Delaware,Millville,Sussex,544,217.7
+Delaware,Milton,Sussex,2576,1428.8
+Delaware,Newark,New Castle,31454,3424.4
+Delaware,New Castle,New Castle,5285,1554.9
+Delaware,Newport,New Castle,1055,2406.5
+Delaware,North Star,New Castle,7980,1173.1
+Delaware,Ocean View,Sussex,1882,768.6
+Delaware,Odessa,New Castle,364,716.1
+Delaware,Pike Creek,New Castle,7898,2861
+Delaware,Pike Creek Valley,New Castle,11217,4355.3
+Delaware,Rehoboth Beach,Sussex,1327,1128.9
+Delaware,Rising Sun-Lebanon,Kent,3391,999.4
+Delaware,Riverview,Kent,2456,680.2
+Delaware,Rodney Village,Kent,1487,2505.2
+Delaware,Seaford,Sussex,6928,1330.8
+Delaware,Selbyville,Sussex,2167,639.7
+Delaware,Slaughter Beach,Sussex,207,152.6
+Delaware,Smyrna,Kent,10023,1690.6
+Delaware,Smyrna,New Castle,10023,1690.6
+Delaware,South Bethany,Sussex,449,873
+Delaware,Townsend,New Castle,2049,1952.9
+Delaware,Viola,Kent,157,851
+Delaware,Wilmington,New Castle,70851,6497.6
+Delaware,Wilmington Manor,New Castle,7889,5075
+Delaware,Woodside,Kent,181,1107
+Delaware,Woodside East,Kent,2316,1365.3
+Delaware,Wyoming,Kent,1313,1238.7
