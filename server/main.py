@@ -99,7 +99,7 @@ def getPropertiesRoute():
         population = pop.readCounties(state, county)
     else:
         population = pop.readPopulation(state, county, city)
-        
+
     populationList = population.split(",")
     population = populationList[0]
     populationDenisty = populationList[1]
@@ -136,4 +136,4 @@ def getCitiesRoute():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
