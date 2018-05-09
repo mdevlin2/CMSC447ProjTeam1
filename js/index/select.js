@@ -42,6 +42,7 @@ var stateAbbrev = {
 }
 
 
+
 function loadingOn(loading) {
 	loading.style.display = "inline-block"
 	return
@@ -93,7 +94,11 @@ window.onload = function () {
 
 	// display correct counties
 	stateSel.onchange = function () {
-		localStorage.setItem('state', stateSel.value);
+		var location = new Location()
+		location.state = this.value
+		var locationData = JSON.stringify(location)
+		console.log(locationData)
+		localStorage.setItem("location", locationData)
 		changedState()
 
 		// Ignore the default selection
@@ -109,7 +114,15 @@ window.onload = function () {
 
 	// display correct cities
 	countySel.onchange = function () {
-		localStorage.setItem('county', countySel.value);
+		var location = localStorage.getItem("location")
+		console.log(location)
+		if (location == null){
+			location = new Location()
+		} else {
+			location = JSON.parse(location)
+		}
+		location.county = this.value
+
 		changedCounties()
 
 		// Ignore the default selection
@@ -124,6 +137,14 @@ window.onload = function () {
 				loadingOff(icon)
 
 				var resp = JSON.parse(req.responseText)
+
+				// Update the location cookie
+				location.long = resp.data[0].long
+				location.lat = resp.data[0].lat
+				locationData = JSON.stringify(location)
+				localStorage.setItem("location", locationData)
+
+				// Populate the cities selection
 				var cityList = resp.data[0].cities
 				console.log("got cities" + cityList)
 				for (index in cityList){
@@ -138,15 +159,24 @@ window.onload = function () {
 	}
 
 	citySel.onchange = function() {
-		localStorage.setItem('city', citySel.value);
+		var location = localStorage.getItem("location")
+		var location = JSON.parse(location)
+
 		if (this.selectedIndex < 1) { return; }
 		console.log(this.value)
-		var house = JSON.parse(this.value)
+		var city = JSON.parse(this.value)
+
+		// Update the location cookie
+		location.city = city.name
+		location.lat = city.lat
+		location.long = city.long
+		locationData = JSON.stringify(location)
+		localStorage.setItem("location", locationData)
+
+
 		submitBut.style.display = "inline-block"
-		localStorage.setItem('selectedLat', house.lat);
-		localStorage.setItem('selectedLong', house.long);
-		console.log("setting: " + house.lat)
-		console.log("setting: " + house.long)
+		console.log("setting: " + city.lat)
+		console.log("setting: " + city.long)
 	}
 }
 

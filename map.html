@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <script src="js/map/results.js"></script>
+  <script src="js/location.js"></script>
   <script src="js/routes.js"></script>
-  <script src="js/filter.js"></script>
+  <script src="js/map/filter.js"></script>
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/jquery.address.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -17,11 +19,14 @@
          * your scripts tag
   -->
     </script>
-    <script src="js/markers.js"></script>
+    <script src="js/map/propertyMarkers.js"></script>
+    <script src="js/map/ammenityMarkers.js"></script>
+
+    <script src="js/map/markers.js"></script>
 
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/map.css">
 </head>
 <body>
     <div id="wrapper">
@@ -41,31 +46,69 @@
   </div>
   <div id="mapContainer">
     <div id="map">
-      <script src="js/map.js"></script>
+      <script src="js/map/map.js"></script>
     </div>
     <div id="filterTable">
       <div class="borderWrap filter" id="propertyFilter">
-        <p><b><u>Property</u></b></p>
-        Max Price:    <input type="text" id="maxPrice" /><br />
-        Minimum Price:<input type="text" id="minPrice" /><br />
+           <p><b><u>Price</u></b></p>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+           <input type="number" id="minPrices" name="minPrices"  placeholder ="min price" style="font-size: 24px;">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+            <input type="number" id="maxPrices" name="maxPrices" list="maxPrices" placeholder ="max price" style="font-size: 24px;">
+        </div>
+         <b><u>Bedrooms</u></b>
+         <select name = "bedroom" id = "bedroom">
+            <option value="0">0+</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+            <option value="6">6+</option>
+          </select> <br>
+         <b><u>Bathrooms</u></b>
+         <select name = "bathroom" id = "bathroom">
+            <option value="0">0+</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+            <option value="6">6+</option>
+          </select>
       </div>
 
       <div class="borderWrap filter" id="ammenityFilter">
-      <p><b><u>Ammentities</u></b></p>
-      <ul>
+      <p><b>Ammentities</b></p>
 
-      <li>Restaurants <input type="checkbox" id="restaurantsChk" value="restaurant" /></li>
-      <li>Gyms <input type="checkbox" id="gymChk" value="gym"/></li>
-      <li>Bike paths <input type="checkbox" id="bikeChk" value="bike_paths" /></li>
-      <li>Pools <input type="checkbox" id="poolChk" value="pool"/></li>
-      <li> Search radius:
-        <div class="slidecontainer">
-          <label id="radius">100</label>
-          <input type="range" min="1" max="30" value="5" class="slider" id="searchRadius">
-        </div>
-      </li>
-    </ul>
+      <table class="filterInputs">
+      <tr>
+        <td>Restaurants</td> <td><input type="checkbox" class="filterCheck" id="restaurantsChk" value="restaurant" /></td>
+      </tr>
+      <tr>
+        <td>Gyms</td><td><input type="checkbox" class="filterCheck" id="gymChk" value="gym"/></td>
+      </tr>
+      <tr>
+        <td>Bike paths </td><td><input type="checkbox" class="filterCheck" id="bikeChk" value="bike_paths" /></td>
+      </tr>
+      <tr>
+        <td>Pools </td><td><input type="checkbox" class="filterCheck" id="poolChk" value="pool"/></td>
+      </tr>
+      <tr>
+        <td>Search radius:</td>
+          <td><div class="slidecontainer">
+            <label id="radius">10</label>
+            <input type="range" min="1" max="20" value="5" class="slider" id="searchRadius">
+          </div></td>
+      </tr>
+
+      </table>
+
     <button id="updateButton" >Update</button> <img src="images/loading.gif" id="loading" class="loadingIcon" />
+
     </div>
   </div>
   </div>
@@ -83,6 +126,12 @@
       </th>
       <th>
         beds
+      </th>
+      <th>
+        Real estate Co.
+      </th>
+      <th>
+        Phone
       </th>
     </table>
 

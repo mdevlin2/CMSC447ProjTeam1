@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+  <script src="js/location.js"></script>
+  <script src="js/map/search.js"></script>
+  <script src="js/map/fav.js"></script>
     <div id="wrapper">
         <div class="pageTitle">
             Coastal Home Search:<br>
@@ -20,34 +23,17 @@
         </ul>
     </div>
     </div>
-    <table>
-        <tr>
-            <th>
-            <h3>Filter State:</h3>
-            </th>
-
-            <th>
-            <form onchange="return filterFavs()">
-                <select id="filterState">
-                    <option value="ALL">Select State</option>
-                    <option value="MD">Maryland</option> 
-                    <option value="DE">Delaware</option>
-                </select>
-            </form>
-            </th>
-        </tr>
-    </table>
     <br>
-    <table border="1" width="80%" id="favTable">
+    <table border="1" width="80%" class = "borderWrap resbar" id="favTable">
     <tr>
-        <th>Listings</th>
-        <th>Agencies</th>
-        <th></th>
+        <th>State</th>
+        <th>County</th>
+        <th>Address</th>
+        <th>Real estate Co.</th>
+        <th>Phone</th>
     </tr>
     </table>
     </div>
-    <script src="js/search.js"></script>
-    <script src="js/fav.js"></script>
     <script>
         window.onload = function() {
             return addFavs();

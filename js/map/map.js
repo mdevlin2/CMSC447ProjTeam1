@@ -1,6 +1,28 @@
 var mymap = L.map('map');
 var markerLayer = L.layerGroup()
 var ammenityLayer = L.layerGroup()
+var favLayer = L.layerGroup()
+
+var defaultResultTable = `
+<th>
+  Address
+</th>
+<th>
+  Price
+</th>
+<th>
+  bathrooms
+</th>
+<th>
+  beds
+</th>
+<th>
+  Real estate Co.
+</th>
+<th>
+  Phone
+</th>
+`
 
 function checkState(resp){
   return (resp.readyState == 4 && resp.status == 200);
@@ -14,17 +36,4 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voya
           id: 'mapbox.streets'}).addTo(mymap);
 mymap.addLayer(markerLayer)
 mymap.addLayer(ammenityLayer)
-
-function calculateRadius(map){
-  var distance = map.getBounds().getNorthWest().distanceTo(map.getBounds().getSouthEast());
-  console.log("Calculated radius: " + distance)
-  return distance
-}
-
-function getMarkerFormat(place){
-  if (place.thumbnail != null){
-    return "<a href=" + place.fullurl + " target=\"_blank\">" + place.title + "</a>" + " <img src= \"" + place.thumbnail.source + "\"> ";
-  } else {
-    return "<a href=" + place.fullurl + ">" + place.title + "</a>";
-  }
-}
+mymap.addLayer(favLayer)

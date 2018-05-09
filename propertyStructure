@@ -1,0 +1,14 @@
+{
+    "address": "8298 Mock Blvd",
+    "characteristics": {
+        "bathrooms": 2,
+        "bedrooms": 3,
+        "price": 386930
+        "agency": {
+          "name": "agency_name_here",
+          "phone": "phone_number_here",
+        },
+    },
+    "lat": 12.210833333333333,
+    "long": 31.31115
+},

@@ -6,17 +6,36 @@ body {
     height: 100%;
 }
 
+input.filterCheck{
+  border: 5px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: DodgerBlue;
+  height: 25px;
+  width: 25px;
+  background-color: #eee
+}
+
+input.filterCheck:hover {
+  background-color: #ccc;
+}
+
+table.filterInputs{
+  font-family: Helvetica;
+  font-size: 20px;
+}
+
 table.searchTable{
   font-family: Helvetica;
 }
 select {
-  font-size: 24px;
+  font-size: 20px;
   font-family: Helvetica;
-  border: 10px solid #ccc;
-  border-radius: 10px;
+  border: 5px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
   color: DodgerBlue;
-  margin: 10%;
+  margin: 5%;
 }
 button#searchButton{
   font-size: 24px;
@@ -28,13 +47,7 @@ button#searchButton{
   color: DodgerBlue;
 }
 
-tr#citySelRow {
-  display: none;
-}
 
-tr#countySelRow {
-    display: none;
-}
 
 .searchButton {
   display: none;
@@ -45,30 +58,28 @@ img.loadingIcon {
   width: 10%;
 }
 
+img.popupImage{
+  width: 100%;
+}
+
+div.popup{
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
 th {
   font-size: 24px;
   font-family: Helvetica;
 
   color: DodgerBlue;
 }
-#finalsearch {
-    display: none;
-}
 
-#searchBar {
-    float: right;
-    padding: 9px;
-}
+
 
 #nav, td {
     vertical-align: baseline;
 }
 
-
-#settingsIcon {
-    float: right;
-    padding: 6px 0 4px 4px;
-}
 
 #footer {
     font-size: 10px;

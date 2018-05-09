@@ -10,9 +10,9 @@ function getCitiesRoute(state, county){
 }
 
 // generates the url to make a request to the server
-function getPropertyRoute(lat, long){
+function getPropertyRoute(location){
   var slider = document.getElementById("searchRadius")
-  return "http://localhost:5000/properties?lat="+lat.toString()+"&long="+long.toString()+"&maxRadius="+slider.value.toString()
+  return "http://localhost:5000/properties?lat="+location.lat.toString()+"&long="+location.long.toString()+"&maxRadius="+slider.value.toString()+"&state="+location.state+"&county="+location.county+"&city="+location.city
 }
 
 function getAmmenitiesRoute(lat, long, radius, terms){
