@@ -33,8 +33,8 @@ class Zillow:
         return cityList
 
     # get properties
-    def getProperties(self, lat, long, maxRadius):
-        houses = housing.makeHouses(float(lat), float(long), int(maxRadius))
+    def getProperties(self, lat, long, maxRadius, population, populationDenisty):
+        houses = housing.makeHouses(float(lat), float(long), int(maxRadius), population, populationDenisty)
         return houses
 
     def getCounty(self, location):

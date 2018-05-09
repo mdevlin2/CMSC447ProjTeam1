@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
 
+import csvreader as pop
 import rest.zillowCollector as zc
 from models.location import Location
 from models.http import Response
@@ -26,6 +27,18 @@ def getLatLong(args):
     if "lat" in args and "long" in args:
         return args["lat"], args["long"]
     return None, None
+
+def getStateCountyCity(args):
+    if args["state"] == "":
+        return None, None, None
+
+    if args["county"] == "":
+        return None, None, None
+
+    if args["city"] == "":
+        return args["state"], args["county"], None
+
+    return args["state"], args["county"], args["city"]
 
 # Convert a list of class structures to json
 def makeResponse(data, err):
@@ -77,7 +90,22 @@ def getPropertiesRoute():
     if lat == None:
         print("lat and long parameters not provided")
         return makeResponse(None, 1)
-    houses = zillow.getProperties(lat, long, request.args["maxRadius"])
+    state, county, city = getStateCountyCity(request.args)
+    if state == None:
+        print("Request did not include state: ", request.args.state)
+        return makeResponse(None, 1)
+
+    if city == None:
+        population = pop.readCounties(state, county)
+    else:
+        population = pop.readPopulation(state, county, city)
+        
+    populationList = population.split(",")
+    population = populationList[0]
+    populationDenisty = populationList[1]
+    if populationDenisty == "-1":
+        populationDenisty = "NA"
+    houses = zillow.getProperties(lat, long, request.args["maxRadius"], population, populationDenisty)
     resp = makeResponse(houses, 0)
     return resp
 
@@ -105,6 +133,7 @@ def getCitiesRoute():
 
     # new response
     return resp
+
 
 if __name__ == "__main__":
     app.run(debug=True)

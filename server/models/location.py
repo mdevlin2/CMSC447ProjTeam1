@@ -3,12 +3,19 @@ import json
 
 # characterizing a house
 class HouseCharacteristics:
-    def __init__(self, price, bedrooms, bathrooms):
+    def __init__(self, price, bedrooms, bathrooms, population, populationDenisty, agency):
         self.price = price
 
         #Number of bathrooms and bedrooms
         self.bedrooms = bedrooms
         self.bathrooms = bathrooms
+        self.population = population
+        self.populationDenisty = populationDenisty
+        self.agency = agency
+class Agency:
+    def __init__(self, agencyName, phone):
+        self.name = agencyName
+        self.phone = phone
 
 # Describing a house
 class House:
@@ -16,6 +23,8 @@ class House:
         self.address = address
         self.lat = lat
         self.long = long
+        self.state = ""
+        self.county = ""
         self.characteristics = characteristics
 
 
