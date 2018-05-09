@@ -82,16 +82,20 @@ def buildPlace(term, business):
     long = business["coordinates"]["longitude"]
     title = "N/A"
     phone = "N/A"
+    image = "images/na.jpg"
 
     if "categories" in business:
         if "title" in business["categories"]:
             title = business["categories"]["title"]
     if "phone" in business:
         phone = business["phone"]
+    if "image_url" in business:
+        image = business["image_url"]
 
     newPlace = Place(name, lat, long, term)
     newPlace.phone = phone
     newPlace.title = title
+    newPlace.image = image
     return newPlace
 
 

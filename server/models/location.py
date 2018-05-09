@@ -37,6 +37,7 @@ class Place:
         self.type = type
         self.phone = "N/A"
         self.title = "N/A"
+        self.image = "images/na.jpg"
     def __str__(self):
         return "{ name: " + self.name + " lat: " + self.lat + " long: " + self.long + " type: " + str(self.type) + " }"
 
