@@ -8,13 +8,16 @@ function newPropertyMarker(house, location) {
   var price = house.characteristics.price;
   var population = house.characteristics.population
   var populationDenisty = house.characteristics.populationDenisty
+  if (house.city == undefined){
+    house.city = ""
+  }
   var newMarker = new L.Marker(L.latLng(house.lat, house.long))
   newMarker.bindPopup("<h2><b>Property Information</b></h2>" + "<div class=\"popup\">"
   + "Address: " + address + "<br>" +"Number of bathrooms: "
   + bathrooms +"<br>" + "Number of bedrooms: " + bedrooms + "<br>" + "Price: " + price
-  + "<br>" + "<h3>" + house.state + " " + house.county + " Information </h2>"
-  + "Population: " + population.toString() + "<br>"
-  + "Population Density: " + populationDenisty.toString() +  "</div>")
+  + "<br>" + "<h3>" + house.state + " " + house.county + " " + house.city +" Information </h2>"
+  + "Population: " + population.toString() + "<br>" + "</div>")
+   // + "Population Density: " + populationDenisty.toString() +  "</div>")
 
   // adding this marker to array which will be added to the new layer
   return newMarker
@@ -57,6 +60,11 @@ function getProperties(location){
     // Check if we got a response yet
     if (requestReady(req)){
       var resp = JSON.parse(req.responseText)
+      if (resp.err == 1){
+        console.log("something bad happened")
+        alert("Please go to Home and do a new search")
+        return
+      }
       globalHouses = resp.data;
       placePropertyMarkers(resp, location)
     }

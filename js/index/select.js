@@ -75,7 +75,19 @@ function changedState(){
 }
 
 window.onload = function () {
-
+	addHome()
+	addMap()
+	addFavorites()
+	var loc = localStorage.getItem("location")
+	if (loc == null){
+		var location = new Location()
+		location.state = "Maryland"
+		location.county = "Baltimore"
+		location.lat = 39.25560152079427
+		location.long = -76.71099543571474
+		var locationData = JSON.stringify(location)
+		localStorage.setItem("location", locationData)
+	}
 	//Get html elements
 	var stateSel = document.getElementById("stateSel");
 	var citySel = document.getElementById("citySel");
@@ -94,11 +106,6 @@ window.onload = function () {
 
 	// display correct counties
 	stateSel.onchange = function () {
-		var location = new Location()
-		location.state = this.value
-		var locationData = JSON.stringify(location)
-		console.log(locationData)
-		localStorage.setItem("location", locationData)
 		changedState()
 
 		// Ignore the default selection
@@ -121,6 +128,8 @@ window.onload = function () {
 		} else {
 			location = JSON.parse(location)
 		}
+
+		location.state = stateSel.value
 		location.county = this.value
 
 		changedCounties()
@@ -152,6 +161,8 @@ window.onload = function () {
 					citySel.options[citySel.options.length] = new Option(cityList[index].name, JSON.stringify(cityList[index]))
 				}
 				citySelRow.style.display = "table-row"
+				submitBut.style.display = "inline-block"
+
 
 			}
 		}

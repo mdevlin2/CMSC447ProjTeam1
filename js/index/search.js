@@ -4,7 +4,7 @@ function SearchMap(){
 	var countyVal = document.getElementById("countySel").value;
 	console.log(stateVal + " " + cityVal + " " + countyVal)
 	if( (stateVal != null) && (cityVal != null) && (countyVal != null) ){
-		window.location = "http://localhost:8000/map.html";
+		window.location = getMapLink();
 	}
 	return false;
 }

@@ -38,7 +38,10 @@ function getAmmenities(){
   // trim the last comma
   if (terms != ""){
     terms = terms.substring(0, terms.length-1)
-  } else { return }
+  } else {
+    loadingOff()
+    return
+  }
 
 
   var lat = mymap.getCenter().lat
@@ -78,7 +81,7 @@ function newAmmenityMarkers(ammenities, terms){
       var long = ammenity.long
       var newMarker = new L.Marker(L.latLng(lat, long))
       console.log(ammenity)
-      newMarker.bindPopup("<h2>"+ammenity.name+"</h2>"+ "<div class=\"popup\">"
+      newMarker.bindPopup("<h2>"+ammenity.name+"</h2>"+ "<div class=\"popup\">" +
       "<img src=" + ammenity.image + " class=\"popupImage\" >" + "<br>" +
       "Phone: " + ammenity.phone + "</div>")
       newMarker.setIcon(markerIcons[term])

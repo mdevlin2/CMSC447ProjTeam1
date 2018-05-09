@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <script src="js/routes.js"></script>
+  <script src="js/header.js"></script>
   <script src="js/map/results.js"></script>
   <script src="js/location.js"></script>
-  <script src="js/routes.js"></script>
   <script src="js/map/filter.js"></script>
+  <script src="js/map/propertyMarkers.js"></script>
+  <script src="js/map/ammenityMarkers.js"></script>
+
   <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/jquery.address.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -19,8 +23,6 @@
          * your scripts tag
   -->
     </script>
-    <script src="js/map/propertyMarkers.js"></script>
-    <script src="js/map/ammenityMarkers.js"></script>
 
     <script src="js/map/markers.js"></script>
 
@@ -37,10 +39,7 @@
     <div id="header">
 
     <div id="nav">
-      <ul>
-        <li><a href="http://localhost:8000/index.html">Home</a></li>
-        <li><a href="http://localhost:8000/map.html">Map</a></li>
-        <li><a href="http://localhost:8000/favorites.html">Favorites</a></li>
+      <ul id="navList">
       </ul>
     </div>
   </div>
@@ -50,7 +49,7 @@
     </div>
     <div id="filterTable">
       <div class="borderWrap filter" id="propertyFilter">
-           <p><b><u>Price</u></b></p>
+           <p><b>Price</b></p>
         <div class="input-group">
           <span class="input-group-addon">$</span>
            <input type="number" id="minPrices" name="minPrices"  placeholder ="min price" style="font-size: 24px;">
@@ -59,7 +58,7 @@
           <span class="input-group-addon">$</span>
             <input type="number" id="maxPrices" name="maxPrices" list="maxPrices" placeholder ="max price" style="font-size: 24px;">
         </div>
-         <b><u>Bedrooms</u></b>
+         <b>Bedrooms</b>
          <select name = "bedroom" id = "bedroom">
             <option value="0">0+</option>
             <option value="1">1+</option>
@@ -69,7 +68,7 @@
             <option value="5">5+</option>
             <option value="6">6+</option>
           </select> <br>
-         <b><u>Bathrooms</u></b>
+         <b>Bathrooms</b>
          <select name = "bathroom" id = "bathroom">
             <option value="0">0+</option>
             <option value="1">1+</option>

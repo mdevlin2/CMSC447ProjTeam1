@@ -11,7 +11,9 @@ function deleteSavedHouse(index){
   console.log("deleteSavedHouse")
   var savedJson = localStorage.getItem("savedHouses")
   var savedHouses = JSON.parse(savedJson)
-  savedHouses = savedHouses.splice(index, 0)
+  savedHouses.splice(index, 1)
+  console.log("deleting")
+  console.log(savedHouses)
   var toSaveJson = JSON.stringify(savedHouses)
   localStorage.setItem("savedHouses", toSaveJson)
 
@@ -50,7 +52,7 @@ function createFavoriteEntry(house, index){
     console.log("should go to map")
     var loc = makeNewLocation(house)
     localStorage.setItem("location", JSON.stringify(loc))
-    window.location = "http://localhost:8000/map.html"
+    window.location = getMapLink()
   }
   delImage.src = "images/deleteFavIcon.jpg"
 
@@ -79,6 +81,7 @@ function addFavs(state) {
 
   var location = JSON.parse(posInfo)
   var savedHouses = JSON.parse(houseInfo)
+  console.log(savedHouses)
 
   // update the faveTable
   favTable.innerHTML = defaultFavTable

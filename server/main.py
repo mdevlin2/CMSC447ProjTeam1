@@ -29,6 +29,12 @@ def getLatLong(args):
     return None, None
 
 def getStateCountyCity(args):
+    if not "state" in args:
+        return None, None, None
+
+    if not "county" in args:
+        return None, None, None
+
     if args["state"] == "":
         return None, None, None
 
@@ -92,7 +98,7 @@ def getPropertiesRoute():
         return makeResponse(None, 1)
     state, county, city = getStateCountyCity(request.args)
     if state == None:
-        print("Request did not include state: ", request.args.state)
+        print("Request did not include state or county")
         return makeResponse(None, 1)
 
     if city == None:

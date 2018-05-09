@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Coastal Home Search</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/map.css">
 </head>
 <body>
+  <script src="js/routes.js"></script>
+  <script src="js/header.js"></script>
   <script src="js/location.js"></script>
   <script src="js/map/search.js"></script>
   <script src="js/map/fav.js"></script>
     <div id="wrapper">
         <div class="pageTitle">
             Coastal Home Search:<br>
-            Home Page
+            Favorites
         </div>
     <div id="header">
     <div id="nav">
-        <ul>
-            <li><a href="http://localhost:8000/index.html">Home</a></li>
-            <li><a href="http://localhost:8000/map.html">Map</a></li>
-            <li><a href="http://localhost:8000/favorites.html">Favorites</a></li>
+        <ul id="navList">
         </ul>
     </div>
     </div>
@@ -36,6 +35,9 @@
     </div>
     <script>
         window.onload = function() {
+            addHome()
+            addMap()
+            addFavorites()
             return addFavs();
         };
     </script>

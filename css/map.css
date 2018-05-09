@@ -37,20 +37,13 @@ select {
   color: DodgerBlue;
   margin: 5%;
 }
-button#searchButton{
-  font-size: 24px;
+button {
+  font-size: 20px;
   font-family: Helvetica;
-  display: none;
-  border: 10px solid #ccc;
-  border-radius: 10px;
+  border: 5px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
   color: DodgerBlue;
-}
-
-
-
-.searchButton {
-  display: none;
 }
 
 img.loadingIcon {
@@ -197,6 +190,13 @@ a.button {
 #filterTable{
   top:auto;
   font-size: 23px;
+}
+
+#favTable{
+  border-collapse: separate;
+  border: 1px solid black;
+  font-size: 23px;
+  width: 100%;
 }
 
 #filterTable {

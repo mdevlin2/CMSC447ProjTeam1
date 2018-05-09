@@ -92,6 +92,9 @@ function prepareEventHandlers() {
 
 window.onload = function(){
   console.log("loaded")
+  addHome();
+  addMap();
+  addFavorites();
   prepareEventHandlers();
   var slider = document.getElementById("searchRadius");
   var radius = document.getElementById("radius");
