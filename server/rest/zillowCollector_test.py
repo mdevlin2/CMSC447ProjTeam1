@@ -26,7 +26,7 @@ def success():
 
 # Happy path of the zillowCollector
 def TestCitiesRoute():
-    rest = rst.mockRest(mockData.GetRegionChildrenResponse)
+    rest = rst.mockRest(mockData.GetRegionChildrenResponse, None)
     z = zc.Zillow(rest)
     l = loc.Location("")
     l.addCounty("")

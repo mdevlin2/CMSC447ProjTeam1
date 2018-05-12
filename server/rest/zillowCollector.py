@@ -32,11 +32,12 @@ class Zillow:
 
         return cityList
 
-    # get properties
+    # get properties using fake data
     def getProperties(self, lat, long, maxRadius, population, populationDenisty):
         houses = housing.makeHouses(float(lat), float(long), int(maxRadius), population, populationDenisty)
         return houses
 
+    # get county location data
     def getCounty(self, location):
         newLocation = models.location.Location(location.state)
         data = self.getHeader(newLocation)

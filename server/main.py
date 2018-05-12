@@ -7,13 +7,14 @@ import rest.zillowCollector as zc
 from models.location import Location
 from models.http import Response
 from utils.rest import restUtil
-import rest.yelp as yelp
+import rest.yelp as y
 
 app = Flask(__name__)
 CORS(app)
 
 rest = restUtil()
 zillow = zc.Zillow(rest)
+yelp = y.Yelp(rest=rest)
 
 # build a city with the given arguements
 def buildLoc(args):
@@ -84,6 +85,7 @@ def getAmmenitiesRoute():
     radius = int(req['radius'])
     lat, long = getLatLong(req)
     data = yelp.getAmmenities(terms, lat, long, radius)
+    print(data)
     resp = {"data": data, "err": 0}
     # print(resp)
     return jsonify(resp)

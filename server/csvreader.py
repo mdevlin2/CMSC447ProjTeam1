@@ -142,42 +142,42 @@ def readCounties(state, county):
 
 
 # Testing for readPopulation, readCities, and readCounties
-def main():
-
-	# Test that my method for opening the csv is correct:
-	with open('municipalities.csv', 'r') as csvfile:
-		populationReader = csv.reader(csvfile, delimiter=',')
-		# for row in populationReader:
-			#print ''.join(row)
-
-		# Test that my list conversion is correct:
-		# csvList = list(populationReader)
-
-		# for row in csvList:
-		# 	for col in row:
-		# 		#print col
-
-		# Test valid case
-		valid = readPopulation('Maryland','Harford','Aberdeen')
-		print(valid)
-
-		# Test invalid case
-		invalid = readPopulation('-1','-1','-1')
-		print(invalid)
-
-		# Test valid case
-		valid = readCities('Maryland','Frederick')
-		print(valid)
-
-		# Test invalid case
-		invalid = readCities('-1','-1')
-		print(invalid)
-
-		# Test valid case
-		valid = readCounties('Maryland','Frederick')
-		print(valid)
-
-		# Test invalid case
-		invalid = readCounties('-1','-1')
-		print(invalid)
-main()
+# def main():
+#
+# 	# Test that my method for opening the csv is correct:
+# 	with open('municipalities.csv', 'r') as csvfile:
+# 		populationReader = csv.reader(csvfile, delimiter=',')
+# 		# for row in populationReader:
+# 			#print ''.join(row)
+#
+# 		# Test that my list conversion is correct:
+# 		# csvList = list(populationReader)
+#
+# 		# for row in csvList:
+# 		# 	for col in row:
+# 		# 		#print col
+#
+# 		# Test valid case
+# 		valid = readPopulation('Maryland','Harford','Aberdeen')
+# 		print(valid)
+#
+# 		# Test invalid case
+# 		invalid = readPopulation('-1','-1','-1')
+# 		print(invalid)
+#
+# 		# Test valid case
+# 		valid = readCities('Maryland','Frederick')
+# 		print(valid)
+#
+# 		# Test invalid case
+# 		invalid = readCities('-1','-1')
+# 		print(invalid)
+#
+# 		# Test valid case
+# 		valid = readCounties('Maryland','Frederick')
+# 		print(valid)
+#
+# 		# Test invalid case
+# 		invalid = readCounties('-1','-1')
+# 		print(invalid)
+# main()

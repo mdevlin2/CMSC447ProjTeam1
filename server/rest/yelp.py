@@ -18,6 +18,7 @@ Sample usage of the program:
 """
 from __future__ import print_function
 from models.location import Place
+from models.routes import YelpRoutes
 import json
 import argparse
 import json
@@ -50,17 +51,7 @@ except ImportError:
 API_KEY= "A3xPL54CKC9ceV9gbpC7DK3xMjTbVGDKkrwzjVQMY8LgI5g_3s-hUIlG_YB1Y63g5mT5c4xbTEynC0FKhf-J7eKeLoe_loZGLu9lsr27t2aiiBVvqD8GO9V2tj7RWnYx"
 
 
-
-
-# API constants, you shouldn't have to change these.
-API_HOST = 'https://api.yelp.com'
-SEARCH_PATH = '/v3/businesses/search'
-BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
-
-
 # Defaults for our simple example.
-DEFAULT_TERM = 'Restaurants'
-DEFAULT_LOCATION = 'Baltimore, MD'
 SEARCH_LIMIT = 10
 
 # Make sure the business dictionary has all the keys we need
@@ -75,6 +66,7 @@ def validateBusiness(business):
 
     return True
 
+# Builds a place based on the business entry
 def buildPlace(term, business):
     name = business["name"]
     id = business["id"]
@@ -98,156 +90,111 @@ def buildPlace(term, business):
     newPlace.image = image
     return newPlace
 
+# Yelp communicates with the yelp API
+class Yelp:
+    def __init__(self, rest):
+        self.api_key = API_KEY
+        self.host = 'https://api.yelp.com'
+        self.routes = YelpRoutes()
+        self.rest = rest
 
-def request(host, path, api_key, url_params=None):
-    """Given your API_KEY, send a GET request to the API.
+    # request takes care of any http requests needed for the yelp api
+    def request(self, path, url_params=None):
+        """Given your API_KEY, send a GET request to the API.
 
-    Args:
-        host (str): The domain host of the API.
-        path (str): The path of the API after the domain.
-        API_KEY (str): Your API Key.
-        url_params (dict): An optional set of query parameters in the request.
+        Args:
+            host (str): The domain host of the API.
+            path (str): The path of the API after the domain.
+            API_KEY (str): Your API Key.
+            url_params (dict): An optional set of query parameters in the request.
 
-    Returns:
-        dict: The JSON response from the request.
+        Returns:
+            dict: The JSON response from the request.
 
-    Raises:
-        HTTPError: An error occurs from the HTTP request.
-    """
-    url_params = url_params or {}
-    url = '{0}{1}'.format(host, quote(path.encode('utf8')))
-    headers = {
-        'Authorization': 'Bearer %s' % api_key,
-    }
+        Raises:
+            HTTPError: An error occurs from the HTTP request.
+        """
+        url_params = url_params or {}
+        url = '{0}{1}'.format(self.host, quote(path.encode('utf8')))
+        headers = {
+            'Authorization': 'Bearer %s' % self.api_key,
+        }
 
-    print(u'Querying {0} ...'.format(url))
-    print(url_params)
-    print(headers)
+        print(u'Querying {0} ...'.format(url))
+        print(url_params)
+        print(headers)
 
-    response = requests.request('GET', url, headers=headers, params=url_params)
+        response, err = self.rest.GetWithAuthentication(url, header=headers, data=url_params)
+        if not err == None:
+            print("yelp.request got unexpected error: ", err)
+            return None
 
-    return response.json()
+        return response
 
-def search_lat(api_key, term, latitude, longitude, radius):
-    """Query the Search API by a search term and location.
+    def search_lat(self, term, latitude, longitude, radius):
+        """Query the Search API by a search term and location.
 
-    Args:
-        term (str): The search term passed to the API.
-        location (str): The search location passed to the API.
+        Args:
+            term (str): The search term passed to the API.
+            location (str): The search location passed to the API.
 
-    Returns:
-        dict: The JSON response from the request.
-    """
+        Returns:
+            dict: The JSON response from the request.
+        """
 
-    url_params = {
-        'term': term.replace(' ', '+'),
-        'latitude': str(latitude),
-        'longitude': str(longitude),
-        'radius': str(radius),
-        'limit': SEARCH_LIMIT
-    }
-    return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
+        url_params = {
+            'term': term.replace(' ', '+'),
+            'latitude': str(latitude),
+            'longitude': str(longitude),
+            'radius': str(radius),
+            'limit': SEARCH_LIMIT
+        }
+        data = self.request(self.routes.termSearch, url_params=url_params)
+        if data == None:
+            return None
+        return data
 
+    # getAmmenities gets a list of amenities based on lat and long and term
+    def getAmmenities(self, terms, latitude, longitude, radius):
+        """Queries the API by the input values from the user.
 
-def search(api_key, term, location):
-    """Query the Search API by a search term and location.
+        Args:
+            term (str): The search term to query.
+            location (str): The location of the business to query.
+        """
+        results = dict()
+        print("lat: ", latitude, "long: ", longitude)
+        meterRadius = radius * 1609
 
-    Args:
-        term (str): The search term passed to the API.
-        location (str): The search location passed to the API.
-
-    Returns:
-        dict: The JSON response from the request.
-    """
-
-    url_params = {
-        'term': term.replace(' ', '+'),
-        'location': location.replace(' ', '+'),
-        'limit': SEARCH_LIMIT
-    }
-    return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
-
-
-def get_business(api_key, business_id):
-    """Query the Business API by a business ID.
-
-    Args:
-        business_id (str): The ID of the business to query.
-
-    Returns:
-        dict: The JSON response from the request.
-    """
-    business_path = BUSINESS_PATH + business_id
-
-    return request(API_HOST, business_path, api_key)
-
-
-def getAmmenities(terms, latitude, longitude, radius):
-    """Queries the API by the input values from the user.
-
-    Args:
-        term (str): The search term to query.
-        location (str): The location of the business to query.
-    """
-    results = dict()
-    print("lat: ", latitude, "long: ", longitude)
-    meterRadius = radius * 1609
-
-    if len(terms) == 0:
-        print("terms is empty")
-        return results
-
-    for term in terms:
-        print(term)
-        businessList = list()
-        response = search_lat(API_KEY, term, latitude, longitude, meterRadius)
-        print(response)
-        businesses = response.get('businesses')
-
-
-        if not businesses:
-            print(u'No businesses for {0}'.format(term))
+        if len(terms) == 0:
+            print("terms is empty")
             return results
 
-        # find the minimum search limit
-        limit = SEARCH_LIMIT
-        if len(businesses) < SEARCH_LIMIT:
-            limit = len(businesses)
-
-        print(u'{0} businesses found, querying business info ' \
-            'for the top {1} results "" ...'.format(
-                len(businesses), limit))
-        # Find either the SEARCH_LIMIT number of places or the length of businesses found
-        for i in range(limit):
-            business = businesses[i]
-            if validateBusiness(business):
-                newPlace = buildPlace(term, business)
-                businessList.append(newPlace.__dict__)
-        results[term] = businessList
-
-    return results
-
-def main():
-
-    path = "Bicycle Paths"
-    lat = 39.268608
-    lon = -76.815590
-    radius = 24140 # in meters
-    response = search_lat(API_KEY, path, lat, lon, radius)
+        for term in terms:
+            businessList = list()
+            response = self.search_lat(term, latitude, longitude, meterRadius)
+            if response == None:
+                return None
+            businesses = response['businesses']
 
 
+            if not businesses:
+                print(u'No businesses for {0}'.format(term))
+                return results
 
-    try:
-        query_api(path, lat, lon, radius)
-    except HTTPError as error:
-        sys.exit(
-            'Encountered HTTP error {0} on {1}:\n {2}\nAbort program.'.format(
-                error.code,
-                error.url,
-                error.read(),
-            )
-        )
+            # find the minimum search limit
+            limit = SEARCH_LIMIT
+            if len(businesses) < SEARCH_LIMIT:
+                limit = len(businesses)
 
-
-if __name__ == '__main__':
-    main()
+            print(u'{0} businesses found, querying business info ' \
+                'for the top {1} results "" ...'.format(
+                    len(businesses), limit))
+            # Find either the SEARCH_LIMIT number of places or the length of businesses found
+            for i in range(limit):
+                business = businesses[i]
+                if validateBusiness(business):
+                    newPlace = buildPlace(term, business)
+                    businessList.append(newPlace.__dict__)
+            results[term] = businessList
+        return results
