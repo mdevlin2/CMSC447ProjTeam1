@@ -20,7 +20,6 @@ function makeSaveButton(house){
     var houseArr = JSON.parse(saveJson)
     houseArr.push(house)
     var saveInfo = JSON.stringify(houseArr)
-    console.log(saveInfo)
     localStorage.setItem("savedHouses", saveInfo)
 
     // Remove this from the parent and replace it with a label
@@ -87,7 +86,6 @@ function createHouseEntry(house, favorite){
 }
 
 function updateResults(house, favorite){
-  console.log("updating results")
   var list = document.getElementById("resultList")
   var entry = createHouseEntry(house, favorite)
   list.appendChild(entry)

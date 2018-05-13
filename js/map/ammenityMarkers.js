@@ -64,27 +64,32 @@ function getAmmenities(){
 
 }
 
+function createAmenityMarker(amenity, term){
+  var lat = amenity.lat
+  var long = amenity.long
+  var newMarker = new L.Marker(L.latLng(lat, long))
+  newMarker.bindPopup("<h2>"+amenity.name+"</h2>"+ "<div class=\"popup\">" +
+  "<img src=" + amenity.image + " class=\"popupImage\" >" + "<br>" +
+  "Phone: " + amenity.phone + "</div>")
+  newMarker.setIcon(markerIcons[term])
+
+  return newMarker
+}
+
 // Creates new ammenity markers
-function newAmmenityMarkers(ammenities, terms){
+function newAmmenityMarkers(amenities, terms){
   ammenityLayer.clearLayers()
-  if (Object.keys(ammenities).length == 0){
+  if (Object.keys(amenities).length == 0){
     console.log("no results")
     return
   }
 
   for (t_index in terms){
     var term = terms[t_index]
-    var ammenityList = ammenities[term]
-    for (index in ammenityList){
-      var ammenity = ammenityList[index]
-      var lat = ammenity.lat
-      var long = ammenity.long
-      var newMarker = new L.Marker(L.latLng(lat, long))
-      console.log(ammenity)
-      newMarker.bindPopup("<h2>"+ammenity.name+"</h2>"+ "<div class=\"popup\">" +
-      "<img src=" + ammenity.image + " class=\"popupImage\" >" + "<br>" +
-      "Phone: " + ammenity.phone + "</div>")
-      newMarker.setIcon(markerIcons[term])
+    var amenityList = amenities[term]
+    for (index in amenityList){
+      var amenity = amenityList[index]
+      var newMarker = createAmenityMarker(amenity, term)
       ammenityLayer.addLayer(newMarker)
     }
   }

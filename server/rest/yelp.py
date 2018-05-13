@@ -20,9 +20,6 @@ from __future__ import print_function
 from models.location import Place
 from models.routes import YelpRoutes
 import json
-import argparse
-import json
-import pprint
 import requests
 import sys
 import urllib

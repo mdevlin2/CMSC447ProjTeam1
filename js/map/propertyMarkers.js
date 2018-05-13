@@ -1,7 +1,7 @@
 
 
 
-function newPropertyMarker(house, location) {
+function newPropertyMarker(house) {
   var address = house.address;
   var bathrooms = house.characteristics.bathrooms;
   var bedrooms = house.characteristics.bedrooms;
@@ -16,7 +16,7 @@ function newPropertyMarker(house, location) {
   + "Address: " + address + "<br>" +"Number of bathrooms: "
   + bathrooms +"<br>" + "Number of bedrooms: " + bedrooms + "<br>" + "Price: " + price
   + "<br>" + "<h3>" + house.state + " " + house.county + " " + house.city +" Information </h2>"
-  + "Population: " + population.toString() + "<br>" + "</div>")
+  + "Population: " + population + "<br>" + "</div>")
    // + "Population Density: " + populationDenisty.toString() +  "</div>")
 
   // adding this marker to array which will be added to the new layer
@@ -29,14 +29,13 @@ function placePropertyMarkers(resp, location){
 
   // Clears the table and markes
   clearMarkers()
-
+  console.log("making property markers")
   for (index in houses){
     var house = houses[index]
     house.state = location.state
     house.county = location.county
-
     var marker = newPropertyMarker(house)
-
+    
     // Add the house marker to the layer
     markerLayer.addLayer(marker)
 

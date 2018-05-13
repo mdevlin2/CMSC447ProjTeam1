@@ -110,9 +110,6 @@ window.onload = function () {
 
 		// Ignore the default selection
 		if (this.selectedIndex < 1) { return; }
-
-		console.log(this.value)
-		console.log(stateInfo[this.value])
 		for (var county in stateInfo[this.value]) {
 			console.log("stateinfo: " + stateInfo[this.value][county])
 			countySel.options[countySel.options.length] = new Option(stateInfo[this.value][county], stateInfo[this.value][county]);
@@ -122,7 +119,6 @@ window.onload = function () {
 	// display correct cities
 	countySel.onchange = function () {
 		var location = localStorage.getItem("location")
-		console.log(location)
 		if (location == null){
 			location = new Location()
 		} else {
@@ -155,9 +151,7 @@ window.onload = function () {
 
 				// Populate the cities selection
 				var cityList = resp.data[0].cities
-				console.log("got cities" + cityList)
 				for (index in cityList){
-					console.log("adding" + cityList[index].name)
 					citySel.options[citySel.options.length] = new Option(cityList[index].name, JSON.stringify(cityList[index]))
 				}
 				citySelRow.style.display = "table-row"
@@ -174,7 +168,6 @@ window.onload = function () {
 		var location = JSON.parse(location)
 
 		if (this.selectedIndex < 1) { return; }
-		console.log(this.value)
 		var city = JSON.parse(this.value)
 
 		// Update the location cookie
@@ -186,8 +179,7 @@ window.onload = function () {
 
 
 		submitBut.style.display = "inline-block"
-		console.log("setting: " + city.lat)
-		console.log("setting: " + city.long)
+
 	}
 }
 
