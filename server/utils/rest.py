@@ -1,5 +1,6 @@
 import requests as req
 import models.routes
+import json
 class restUtil:
     def GetWithAuthentication(self, route, header, data):
         r = req.get(route, params=data, headers=header)
@@ -23,4 +24,6 @@ class mockRest:
     def Get(self, route, data):
         return self.toReturn, self.err
     def GetWithAuthentication(self, route, header, data):
-        return self.toReturn, self.err
+        if self.toReturn == None:
+            return None, self.err
+        return json.loads(self.toReturn), self.err

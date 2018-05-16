@@ -23,6 +23,7 @@ def success():
 def TestYelpHappy():
     data = mockData.yelpBusinessSearchResponse
     rest = mockRest(data, None)
+    
     yelp = y.Yelp(rest)
     terms = ["test"]
     lat = 10

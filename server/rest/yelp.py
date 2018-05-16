@@ -117,12 +117,13 @@ class Yelp:
             'Authorization': 'Bearer %s' % self.api_key,
         }
 
-        print(u'Querying {0} ...'.format(url))
-        print(url_params)
-        print(headers)
+        # print(u'Querying {0} ...'.format(url))
+        # print(url_params)
+        # print(headers)
 
         response, err = self.rest.GetWithAuthentication(url, header=headers, data=url_params)
-        if not err == None:
+        print(type(response))
+        if not err == None or response == None:
             print("yelp.request got unexpected error: ", err)
             return None
 
@@ -170,6 +171,7 @@ class Yelp:
         for term in terms:
             businessList = list()
             response = self.search_lat(term, latitude, longitude, meterRadius)
+            print("response: ", response)
             if response == None:
                 return None
             businesses = response['businesses']
